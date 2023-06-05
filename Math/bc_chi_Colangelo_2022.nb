@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    204875,       5283]
-NotebookOptionsPosition[    192272,       5077]
-NotebookOutlinePosition[    192762,       5095]
-CellTagsIndexPosition[    192719,       5092]
+NotebookDataLength[    219467,       5620]
+NotebookOptionsPosition[    206633,       5410]
+NotebookOutlinePosition[    207123,       5428]
+CellTagsIndexPosition[    207080,       5425]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5071,6 +5071,339 @@ KbdAjw1TErm6/trV5A8WNean
    3.8948983994331083`*^9, 3.894898493253253*^9},
  CellLabel->
   "Out[256]=",ExpressionUUID->"a5196a8b-84c3-46ae-bb51-57492f0012d3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "UnitStep"}]], "Input",
+ CellChangeTimes->{{3.8949526729277287`*^9, 3.894952675460142*^9}},
+ CellLabel->
+  "In[266]:=",ExpressionUUID->"7b463e15-a207-4cc0-ba54-1bb99a772f1e"],
+
+Cell[BoxData[
+ FormBox[
+  InterpretationBox[
+   StyleBox[
+    FrameBox[
+     DynamicModuleBox[{System`InformationDump`open$$ = False, 
+      System`InformationDump`mouseOver$$ = False}, 
+      PaneSelectorBox[{True->
+       TagBox[GridBox[{
+          {
+           ItemBox[
+            PaneBox[
+             StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+              StripOnInput->False,
+              BaseStyle -> None],
+             FrameMargins->{{4, 0}, {-1, 1}}],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False], 
+           ItemBox[
+            PaneBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "FEBitmaps", "InformationHelpIcon"]], True->
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
+                 CurrentValue["MouseOver"]]],
+               Appearance->None,
+               BaseStyle->"Link",
+               ButtonData->"paclet:ref/UnitStep",
+               ButtonNote->"paclet:ref/UnitStep"],
+              "\"paclet:ref/UnitStep\""],
+             FrameMargins->{{0, 4}, {0, 2}}],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False]},
+          {
+           ItemBox[
+            PaneBox[
+             
+             StyleBox["\<\"\\!\\(\\*RowBox[{\\\"UnitStep\\\", \\\"[\\\", \
+StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"]\\\"}]\\) represents the unit step \
+function, equal to 0 for \\!\\(\\*RowBox[{\\\"x\\\", \\\"<\\\", \
+\\\"0\\\"}]\\) and 1 for \\!\\(\\*RowBox[{\\\"x\\\", \\\"\[GreaterEqual]\\\", \
+\\\"0\\\"}]\\). \\n\\!\\(\\*RowBox[{\\\"UnitStep\\\", \\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"]\\\"}]\\) represents the multidimensional unit step \
+function which is 1 only if none of the \\!\\(\\*SubscriptBox[\\\"x\\\", \
+\\\"i\\\"]\\) are negative. \"\>", "InformationUsageText",
+              StripOnInput->False,
+              LineSpacing->{1.5, 1.5, 3.}],
+             FrameMargins->{{10, 10}, {8, 10}}],
+            BaseStyle->"InformationUsageSubtitleBackground",
+            StripOnInput->False], 
+           ItemBox["\<\"\"\>",
+            BaseStyle->"InformationUsageSubtitleBackground",
+            StripOnInput->False]},
+          {
+           PaneBox[GridBox[{
+              {
+               
+               DynamicModuleBox[{System`InformationDump`open$$ = {
+                False, False, False, False, False, False}}, 
+                StyleBox[GridBox[{
+                   {
+                    TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Documentation\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Documentation", "Tooltip"]& ], 
+                    TemplateBox[{
+                    
+                    TemplateBox[{
+                    "\"Local \[RightGuillemet]\"", "paclet:ref/UnitStep", 
+                    "paclet:ref/UnitStep", "Link", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"], "\"  \"", 
+                    StyleBox[
+                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
+                    "\"  \"", 
+                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
+                    URL[
+                    "http://reference.wolfram.com/language/ref/UnitStep.html"]\
+, None}, "http://reference.wolfram.com/language/ref/UnitStep.html", 
+                    "Hyperlink", {
+                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
+                    BaseStyle -> {
+                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
+                    "HyperlinkTemplate"]},
+                    "RowDefault"]},
+                   {
+                    TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"Attributes\"",
+                    TooltipStyle->"TextStyling"],
+                    Annotation[#, "Attributes", "Tooltip"]& ], 
+                    RowBox[{"{", 
+                    RowBox[{
+                    "Listable", ",", "NumericFunction", ",", "Orderless", ",",
+                     "Protected", ",", "ReadProtected"}], "}"}]},
+                   {
+                    TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"System`UnitStep\"\>"}
+                  },
+                  AutoDelete->False,
+                  GridBoxAlignment->{"Columns" -> {Right, Left}},
+                  GridBoxDividers->None,
+                  GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                  GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                 StripOnInput->False],
+                DynamicModuleValues:>{}]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.27999999999999997`], {
+                  Offset[0.5599999999999999]}, 
+                 Offset[0.27999999999999997`]}, "Rows" -> {
+                 Offset[0.2], {
+                  Offset[3.6]}, 
+                 Offset[0.2]}}],
+            FrameMargins->{{6, 6}, {6, 3}}], ""},
+          {
+           ItemBox[
+            TagBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "UpPointerOpener"]], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+               System`InformationDump`mouseOver$$]],
+              Alignment->Left,
+              Appearance->{"Default" -> None},
+              
+              ButtonFunction:>FEPrivate`Set[
+               System`InformationDump`open$$, False],
+              Evaluator->Automatic,
+              FrameMargins->{{9, 0}, {0, 0}},
+              ImageMargins->0,
+              ImageSize->Full,
+              Method->"Preemptive"],
+             
+             EventHandlerTag[{
+              "MouseEntered" :> 
+               FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+               "MouseExited" :> 
+               FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+               Method -> "Preemptive", PassEventsDown -> Automatic, 
+               PassEventsUp -> True}]],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         FrameStyle->Directive[
+           GrayLevel[0.8], 
+           Thickness[Tiny]],
+         GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+         
+         GridBoxDividers->{
+          "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"], False->
+       TagBox[GridBox[{
+          {
+           ItemBox[
+            PaneBox[
+             StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+              StripOnInput->False],
+             FrameMargins->{{4, 0}, {-1, 1}}],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False], 
+           ItemBox[
+            PaneBox[
+             TooltipBox[
+              ButtonBox[
+               PaneSelectorBox[{False->
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "FEBitmaps", "InformationHelpIcon"],
+                 ImageSizeCache->{13., {4., 9.}}], True->
+                
+                DynamicBox[FEPrivate`FrontEndResource[
+                 "FEBitmaps", "InformationHelpIconHot"],
+                 ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
+                 CurrentValue["MouseOver"]]],
+               Appearance->None,
+               BaseStyle->"Link",
+               ButtonData->"paclet:ref/UnitStep",
+               ButtonNote->"paclet:ref/UnitStep"],
+              "\"paclet:ref/UnitStep\""],
+             FrameMargins->{{0, 4}, {0, 2}}],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False]},
+          {
+           ItemBox[
+            PaneBox[
+             
+             StyleBox["\<\"\\!\\(\\*RowBox[{\\\"UnitStep\\\", \\\"[\\\", \
+StyleBox[\\\"x\\\", \\\"TI\\\"], \\\"]\\\"}]\\) represents the unit step \
+function, equal to 0 for \\!\\(\\*RowBox[{\\\"x\\\", \\\"<\\\", \
+\\\"0\\\"}]\\) and 1 for \\!\\(\\*RowBox[{\\\"x\\\", \\\"\[GreaterEqual]\\\", \
+\\\"0\\\"}]\\). \\n\\!\\(\\*RowBox[{\\\"UnitStep\\\", \\\"[\\\", \
+RowBox[{SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], StyleBox[\\\"1\\\", \
+\\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"x\\\", \\\"TI\\\"], \
+StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\[Ellipsis]\\\", \\\
+\"TR\\\"]}], \\\"]\\\"}]\\) represents the multidimensional unit step \
+function which is 1 only if none of the \\!\\(\\*SubscriptBox[\\\"x\\\", \
+\\\"i\\\"]\\) are negative. \"\>", "InformationUsageText",
+              StripOnInput->False,
+              LineSpacing->{1.5, 1.5, 3.}],
+             FrameMargins->{{10, 10}, {8, 10}}],
+            BaseStyle->"InformationUsageSubtitleBackground",
+            StripOnInput->False], 
+           ItemBox["\<\"\"\>",
+            BaseStyle->"InformationUsageSubtitleBackground",
+            StripOnInput->False]},
+          {
+           ItemBox[
+            TagBox[
+             ButtonBox[
+              PaneSelectorBox[{False->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "DownPointerOpener"],
+                ImageSizeCache->{10., {2., 8.}}], True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "DownPointerOpenerHot"],
+                ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
+               System`InformationDump`mouseOver$$]],
+              Alignment->Left,
+              Appearance->{"Default" -> None},
+              
+              ButtonFunction:>FEPrivate`Set[
+               System`InformationDump`open$$, True],
+              Evaluator->Automatic,
+              FrameMargins->{{9, 0}, {0, 0}},
+              ImageMargins->0,
+              ImageSize->Full,
+              Method->"Preemptive"],
+             
+             EventHandlerTag[{
+              "MouseEntered" :> 
+               FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+               "MouseExited" :> 
+               FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+               Method -> "Preemptive", PassEventsDown -> Automatic, 
+               PassEventsUp -> True}]],
+            BaseStyle->"InformationTitleBackground",
+            StripOnInput->False], "\[SpanFromLeft]"}
+         },
+         AutoDelete->False,
+         FrameStyle->Directive[
+           GrayLevel[0.8], 
+           Thickness[Tiny]],
+         GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+         
+         GridBoxDividers->{
+          "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+         GridBoxItemSize->{
+          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+        "Grid"]}, Dynamic[System`InformationDump`open$$],
+       BaselinePosition->Baseline,
+       FrameMargins->0,
+       ImageSize->Automatic],
+      DynamicModuleValues:>{}],
+     BaseStyle->"InformationGridFrame",
+     StripOnInput->False], "InformationGridPlain",
+    StripOnInput->False],
+   InformationData[
+    Association[
+    "ObjectType" -> "Symbol", "Usage" -> 
+     "\!\(\*RowBox[{\"UnitStep\", \"[\", StyleBox[\"x\", \"TI\"], \"]\"}]\) \
+represents the unit step function, equal to 0 for \!\(\*RowBox[{\"x\", \"<\", \
+\"0\"}]\) and 1 for \!\(\*RowBox[{\"x\", \"\[GreaterEqual]\", \"0\"}]\). \n\!\
+\(\*RowBox[{\"UnitStep\", \"[\", RowBox[{SubscriptBox[StyleBox[\"x\", \
+\"TI\"], StyleBox[\"1\", \"TR\"]], \",\", SubscriptBox[StyleBox[\"x\", \
+\"TI\"], StyleBox[\"2\", \"TR\"]], \",\", StyleBox[\"\[Ellipsis]\", \
+\"TR\"]}], \"]\"}]\) represents the multidimensional unit step function which \
+is 1 only if none of the \!\(\*SubscriptBox[\"x\", \"i\"]\) are negative. ", 
+     "Documentation" -> 
+     Association[
+      "Local" -> "paclet:ref/UnitStep", "Web" -> 
+       "http://reference.wolfram.com/language/ref/UnitStep.html"], 
+     "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
+     "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+     "FormatValues" -> None, "Options" -> None, 
+     "Attributes" -> {
+      Listable, NumericFunction, Orderless, Protected, ReadProtected}, 
+     "FullName" -> "System`UnitStep"], False]], TraditionalForm]], "Output",
+ CellChangeTimes->{3.8949526769196777`*^9},
+ CellLabel->
+  "Out[266]=",ExpressionUUID->"65769760-a72d-49c6-ba84-c3fd5e6cf7af"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -5282,6 +5615,10 @@ Cell[168094, 4554, 3075, 80, 238, "Input",ExpressionUUID->"b5fbbc51-52c1-4669-a1
 Cell[CellGroupData[{
 Cell[171194, 4638, 946, 22, 33, "Input",ExpressionUUID->"62dce59f-bc13-4e4d-9ee8-66104203c5de"],
 Cell[172143, 4662, 20089, 410, 214, "Output",ExpressionUUID->"a5196a8b-84c3-46ae-bb51-57492f0012d3"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[192269, 5077, 202, 4, 30, "Input",ExpressionUUID->"7b463e15-a207-4cc0-ba54-1bb99a772f1e"],
+Cell[192474, 5083, 14119, 322, 119, "Output",ExpressionUUID->"65769760-a72d-49c6-ba84-c3fd5e6cf7af"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

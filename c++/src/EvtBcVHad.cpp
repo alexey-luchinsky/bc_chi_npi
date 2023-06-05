@@ -74,22 +74,22 @@ EvtDecayBase* EvtBcVHad::clone() {
 
 void EvtBcVHad::parseDecay() 
 {
-    const EvtIdSet BcPlusID("B_c+"), BcMinusID("B_c-");
-    const EvtIdSet theK("K+", "K-", "K_S0");
-    const EvtId parentId = getParentId();
-    const int cMode = BcMinusID.contains(parentId);
+    EvtIdSet BcPlusID("B_c+"), BcMinusID("B_c-");
+    EvtIdSet theK("K+", "K-", "K_S0");
+    EvtId parentId = getParentId();
+    int cMode = BcMinusID.contains(parentId);
     
-    const EvtIdSet PiPlusID(cMode == 0 ? "pi+" : "pi-");
-    const EvtIdSet PiMinusID(cMode == 0 ? "pi-" : "pi+");
-    const EvtIdSet PiZeroID("pi0");
-    const EvtIdSet KPlusID(cMode == 0 ? "K+" : "K-");
-    const EvtIdSet KMinusID(cMode == 0 ? "K-" : "K+");
+    EvtIdSet PiPlusID(cMode == 0 ? "pi+" : "pi-");
+    EvtIdSet PiMinusID(cMode == 0 ? "pi-" : "pi+");
+    EvtIdSet PiZeroID("pi0");
+    EvtIdSet KPlusID(cMode == 0 ? "K+" : "K-");
+    EvtIdSet KMinusID(cMode == 0 ? "K-" : "K+");
     EvtGenReport(EVTGEN_INFO, "EvtBcVHad") << "parentId = " << getParentId() << std::endl;
         
     int PiPlusFound = 0, PiMinusFound = 0, PiZeroFound = 0, KPlusFound = 0, KMinusFound = 0;
     for (int iDaughter = 0; iDaughter < getNDaug(); ++iDaughter) 
     {
-      EvtId daugId = getDaug(iDaughter);
+      const EvtId daugId = getDaug(iDaughter);
       EvtGenReport(EVTGEN_INFO, "EvtBcVHad") << "iDaughter = " << iDaughter
 					     << " id = " <<getDaug(iDaughter).getName() <<std::endl;
       if (PiPlusID.contains(daugId) && PiPlusFound < 4)
