@@ -45,6 +45,11 @@ public:
                        double t, double mass, double *a1f,
                        double *a2f, double *vf, double *a0f );
 
+  void getaxialff( EvtId parent, EvtId daught,
+                       double t, double mass, double *hV1,
+                       double *hV2, double *hV3, double *hA );
+
+
   void getscalarff(EvtId, EvtId, double, double, double*, 
 		   double*);
 

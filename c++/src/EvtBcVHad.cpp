@@ -405,6 +405,42 @@ void EvtBcVHad::decay_Psi(EvtParticle *root_particle, EvtVector4C hardCur) {
     }
 }
 
+void EvtBcVHad::decay_chiC1(EvtParticle *root_particle, EvtVector4C hardCur) {
+    EvtParticle* chiC1 = root_particle->getDaug(0);
+    
+    EvtVector4R
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = chiC1->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
+    double Q2 = Q.mass2();
+
+    // Calculate Bc -> V W form-factors
+    double hV1, hV2, hV3, hA;
+
+    double m_meson = chiC1->mass();
+    double m_b = root_particle->mass();
+    double mVar = m_b + m_meson;
+
+    ffmodel->getaxialff(root_particle->getId(),
+      chiC1->getId(), 
+      Q2, m_meson, &hV1, &hV2, &hV3, &hA);
+
+    // Calculate Bc -> V W current
+    EvtTensor4C H = hV1*mVar*EvtTensor4C::g();
+    H.addDirProd((hV2/m_b)*p4b, Q);
+    H.addDirProd( (hV3/m_b)*p4meson, Q);
+    H += 2*EvtComplex(0.0, hA/mVar)*dual(EvtGenFunctions::directProd(p4b, p4meson));
+    EvtVector4C Heps = H.cont2(hardCur);
+
+    for (int i = 0; i < 4; i++) {
+        EvtVector4C eps = chiC1->epsParent(i).conj(); // psi-meson polarization vector
+        EvtComplex amp = eps*Heps;
+        vertex(i, amp);
+    }
+}
+
+
 void EvtBcVHad::decay_chiC0(EvtParticle *root_particle, EvtVector4C hardCur) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
     
@@ -446,6 +482,9 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     }
     else if(idVector == EvtPDL::getId("chi_c0").getId()) {
       decay_chiC0(root_particle, hardCur);
+    }
+    else if(idVector == EvtPDL::getId("chi_c1").getId()) {
+      decay_chiC1(root_particle, hardCur);
     };
 
 

@@ -99,6 +99,16 @@ void EvtBCVFF2::getvectorff(EvtId,EvtId,
 }
 
 
+  void EvtBCVFF2::getaxialff( EvtId parent, EvtId daught,
+                       double q2, double mass, double *hV1,
+                       double *hV2, double *hV3, double *hA ) {
+		*hV1=-0.7888608969785541 - 0.10052789894587946*q2 + 0.0028122053015600472*pow(q2,2) - 0.0015941397716725178*pow(q2,3);
+		*hV2=-0.7888608969785541 - 0.10052789894587946*q2 + 0.0028122053015600472*pow(q2,2) - 0.0015941397716725178*pow(q2,3);
+		*hV3=-0.7888608969785541 - 0.10052789894587946*q2 + 0.0028122053015600472*pow(q2,2) - 0.0015941397716725178*pow(q2,3);
+		*hA=-0.7888608969785541 - 0.10052789894587946*q2 + 0.0028122053015600472*pow(q2,2) - 0.0015941397716725178*pow(q2,3);
+}
+
+
 void EvtBCVFF2::getscalarff(EvtId, EvtId, double q2, 
 	double, 
 	double* fPlus, double* fMinus)
