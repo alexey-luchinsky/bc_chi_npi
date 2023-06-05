@@ -47,6 +47,8 @@ protected:
     // Hadronic current function
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
     void parseDecay(void);
+    void decay_Psi(EvtParticle *p, EvtVector4C hardCur);
+    void decay_chiC0(EvtParticle *p, EvtVector4C hardCur);
 
 private:
     // whichfit --- code of the Bc -> VW formfactor set:

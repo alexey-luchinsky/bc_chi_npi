@@ -190,7 +190,6 @@ void EvtBcVHad::init() {
 
     checkNArg(1);
     checkSpinParent(EvtSpinType::SCALAR);
-    checkSpinDaughter(0, EvtSpinType::VECTOR);
     for (int i = 1; i <= (getNDaug() - 1); i++) {
         checkSpinDaughter(i, EvtSpinType::SCALAR);
     }
@@ -368,22 +367,15 @@ EvtVector4C EvtBcVHad::hardCurr(EvtParticle *root_particle) const {
     return hardCur;
 }
 
-//======================================================
 
-void EvtBcVHad::decay(EvtParticle *root_particle) {
-
-    root_particle->initializePhaseSpace(getNDaug(), getDaugs());
-
-    // Calculate hadronic current
-    EvtVector4C hardCur = hardCurr(root_particle);
-
+void EvtBcVHad::decay_Psi(EvtParticle *root_particle, EvtVector4C hardCur) {
     EvtParticle* Jpsi = root_particle->getDaug(0);
     
     EvtVector4R
-	p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
-	p4meson = Jpsi->getP4(), // J/psi momenta
-	Q = p4b - p4meson, 
-	p4Sum = p4meson + p4b;
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = Jpsi->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
     double Q2 = Q.mass2();
 
     // Calculate Bc -> V W form-factors
@@ -394,8 +386,8 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     double mVar = m_b + m_meson;
 
     ffmodel->getvectorff(root_particle->getId(),
-			 Jpsi->getId(), 
-			 Q2, m_meson, &a1f, &a2f, &vf, &a0f);
+      Jpsi->getId(), 
+      Q2, m_meson, &a1f, &a2f, &vf, &a0f);
 
     double a3f = (mVar/(2.0*m_meson))*a1f - ((m_b - m_meson)/(2.0*m_meson))*a2f;
 
@@ -411,5 +403,50 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
         EvtComplex amp = eps*Heps;
         vertex(i, amp);
     }
+}
+
+void EvtBcVHad::decay_chiC0(EvtParticle *root_particle, EvtVector4C hardCur) {
+    EvtParticle* chiC0 = root_particle->getDaug(0);
+    
+    EvtVector4R
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = chiC0->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
+    double Q2 = Q.mass2();
+
+    // Calculate Bc -> V W form-factors
+    double fPlus(0.0), fMinus(0.0);
+
+    double m_meson = chiC0->mass();
+    double m_b = root_particle->mass();
+
+    ffmodel->getscalarff(root_particle->getId(),
+      chiC0->getId(), 
+      Q2, m_meson, &fPlus, &fMinus);
+
+
+    // Calculate Bc -> V W current
+    EvtVector4C H = fPlus*(p4b+p4meson) + fMinus*(p4b-p4meson);
+    EvtComplex amp = H*hardCur;
+    vertex(amp);
+}
+
+
+//======================================================
+void EvtBcVHad::decay(EvtParticle *root_particle) {
+
+    root_particle->initializePhaseSpace(getNDaug(), getDaugs());
+
+    // Calculate hadronic current
+    EvtVector4C hardCur = hardCurr(root_particle);
+
+    if(idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("J/psi").getId()) {
+      decay_Psi(root_particle, hardCur);
+    }
+    else if(idVector == EvtPDL::getId("chi_c0").getId()) {
+      decay_chiC0(root_particle, hardCur);
+    };
+
 
 }
