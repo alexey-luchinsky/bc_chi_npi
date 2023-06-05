@@ -9,7 +9,7 @@ all: segR_test.exe bc_chiJ.exe
 segR_test.exe:
 	$(CC) ../src/segR_test.cc ../src/EvtProbeModel.cpp ../src/segR.cc $(INC) $(LIBS) -o segR_test.exe
 
-bc_chiJ.exe: ../src/bc_chiJ.cc ../src/EvtBcVHad.cpp ../src/EvtWHad.cpp
+bc_chiJ.exe: ../src/bc_chiJ.cc ../src/EvtBcVHad.cpp ../src/EvtWHad.cpp ../src/segR.cc
 	$(CC) ../src/bc_chiJ.cc ../src/EvtBcVHad.cpp ../src/EvtWHad.cpp ../src/segR.cc $(INC) $(LIBS) -o bc_chiJ.exe
 
 clean:
