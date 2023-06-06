@@ -472,6 +472,50 @@ void EvtBcVHad::decay_chiC1(EvtParticle *root_particle) {
     }
 }
 
+void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
+    EvtParticle* chiC1 = root_particle->getDaug(0);
+    EvtVector4C hardCur;
+
+    
+    EvtVector4R
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = chiC1->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
+    double Q2 = Q.mass2();
+
+    // Calculate Bc -> V W form-factors
+    double hV1, hV2, hV3, hA;
+
+    double m_meson = chiC1->mass();
+    double m_b = root_particle->mass();
+    double mVar = m_b + m_meson;
+
+    ffmodel->getaxialff(root_particle->getId(),
+      chiC1->getId(), 
+      Q2, m_meson, &hV1, &hV2, &hV3, &hA);
+
+    EvtDiracSpinor spL, spN;
+    for(int iL=0; iL<2; ++iL) {
+      spL = root_particle->getDaug(iLepton[0])->spParent(iL);
+      spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
+      hardCur = EvtLeptonVCurrent(spL, spN);
+
+      // Calculate Bc -> V W current
+      EvtTensor4C H = hV1*mVar*EvtTensor4C::g();
+      H.addDirProd((hV2/m_b)*p4b, Q);
+      H.addDirProd( (hV3/m_b)*p4meson, Q);
+      H += 2*EvtComplex(0.0, hA/mVar)*dual(EvtGenFunctions::directProd(p4b, p4meson));
+      EvtVector4C Heps = H.cont2(hardCur);
+
+      for (int i = 0; i < 4; i++) {
+          EvtVector4C eps = chiC1->epsParent(i).conj(); // psi-meson polarization vector
+          EvtComplex amp = eps*Heps;
+          vertex(i, iL, amp);
+      }
+    };
+}
+
 
 void EvtBcVHad::decay_chiC0(EvtParticle *root_particle) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
@@ -546,6 +590,9 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
 
     if(out_code==12 && idVector == EvtPDL::getId("chi_c0").getId()) {
       decay_chiC0_mn(root_particle);
+    }
+    else if(out_code==12 && idVector == EvtPDL::getId("chi_c1").getId()) {
+      decay_chiC1_mn(root_particle);
     }
     else if(out_code > 0 && (
       idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("psi(2S)").getId()
