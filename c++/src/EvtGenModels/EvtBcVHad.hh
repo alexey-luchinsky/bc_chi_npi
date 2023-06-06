@@ -46,20 +46,42 @@ protected:
 
     // Hadronic current function
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
+
+
     void parseDecay(void);
 
+
+    /// @brief amplitude of bc -> psi W decay
+    /// @param root_particle 
+    /// @param hadCur effective polrization of virtual W
+    /// @param iPol index of psi's polarization (0,1,2)
+    /// @return amplitude of the decay
     EvtComplex amp_psi(EvtParticle *root_particle, EvtVector4C hadCur, int iPol);
     void decay_Psi(EvtParticle *p);
     void decay_Psi_mn(EvtParticle *p);
 
+    /// @brief amplitude of bc -> chi_c0 W decay
+    /// @param root_particle 
+    /// @param hadCur effective polrization of virtual W
+    /// @return amplitude of the decay
     EvtComplex amp_chiC0(EvtParticle *root_particle, EvtVector4C hadCur);
     void decay_chiC0(EvtParticle *p);
     void decay_chiC0_mn(EvtParticle *p);
 
+    /// @brief amplitude of bc -> chi_c1 W decay
+    /// @param root_particle 
+    /// @param hadCur effective polrization of virtual W
+    /// @param iPol index of chi_c1 polarization (0,1,2)
+    /// @return amplitude of the decay
     EvtComplex amp_chiC1(EvtParticle *root_particle, EvtVector4C hadCur, int iPol);
     void decay_chiC1(EvtParticle *p);
     void decay_chiC1_mn(EvtParticle *p);
 
+    /// @brief amplitude of bc -> chi_c2 W decay
+    /// @param root_particle 
+    /// @param hadCur effective polrization of virtual W
+    /// @param iPol index of chi polarization (0,1,2,3,4)
+    /// @return amplitude of the decay
     EvtComplex amp_chiC2(EvtParticle *root_particle, EvtVector4C harCur, int iPol);
     void decay_chiC2(EvtParticle *root_particle);  
     void decay_chiC2_mn(EvtParticle *p);
