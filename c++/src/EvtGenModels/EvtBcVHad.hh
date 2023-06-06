@@ -47,9 +47,12 @@ protected:
     // Hadronic current function
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
     void parseDecay(void);
-    void decay_Psi(EvtParticle *p, EvtVector4C hardCur);
-    void decay_chiC0(EvtParticle *p, EvtVector4C hardCur);
-    void decay_chiC1(EvtParticle *p, EvtVector4C hardCur);
+    void decay_Psi(EvtParticle *p);
+    void decay_chiC0(EvtParticle *p);
+    void decay_chiC1(EvtParticle *p);
+    void decay_Psi_mn(EvtParticle *p);
+    void decay_chiC0_mn(EvtParticle *p);
+    void decay_chiC1_mn(EvtParticle *p);
 
 private:
     // whichfit --- code of the Bc -> VW formfactor set:
@@ -79,6 +82,8 @@ private:
     std::array<int, 4> iPiZero{-1, -1, -1, -1};
     std::array<int, 4> iKPlus{-1, -1, -1, -1};
     std::array<int, 4> iKMinus{-1, -1, -1, -1};
+    std::array<int, 4> iLepton{-1, -1, -1, -1};
+    std::array<int, 4> iNeutrino{-1, -1, -1, -1};
 
 };
 

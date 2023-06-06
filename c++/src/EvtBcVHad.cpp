@@ -41,7 +41,7 @@
 #include "EvtGenBase/EvtSpinType.hh"
 #include "EvtGenBase/EvtTensor4C.hh"
 #include "EvtGenBase/EvtVector4R.hh"
-
+#include "EvtGenBase/EvtDiracSpinor.hh"
 #include "EvtGenModels/EvtBCVFF2.hh"
 #include "EvtGenModels/EvtWHad.hh"
 
@@ -77,8 +77,18 @@ void EvtBcVHad::parseDecay()
     EvtIdSet BcPlusID("B_c+"), BcMinusID("B_c-");
     EvtIdSet theK("K+", "K-", "K_S0");
     EvtId parentId = getParentId();
+
     int cMode = BcMinusID.contains(parentId);
     
+    EvtIdSet LeptonID(cMode == 0 ? "e+": "e-",
+                      cMode == 0 ? "mu+": "mu-",
+                      cMode == 0 ? "tau+": "tau-");
+    EvtIdSet NeutrinoID(cMode == 0 ? "nu_e": "anti-nu_e",
+                        cMode == 0 ? "nu_mu": "anti-nu_mu",
+                        cMode == 0 ? "nu_tau": "anti-nu_tau");
+    
+
+
     EvtIdSet PiPlusID(cMode == 0 ? "pi+" : "pi-");
     EvtIdSet PiMinusID(cMode == 0 ? "pi-" : "pi+");
     EvtIdSet PiZeroID("pi0");
@@ -86,7 +96,8 @@ void EvtBcVHad::parseDecay()
     EvtIdSet KMinusID(cMode == 0 ? "K-" : "K+");
     EvtGenReport(EVTGEN_INFO, "EvtBcVHad") << "parentId = " << getParentId() << std::endl;
         
-    int PiPlusFound = 0, PiMinusFound = 0, PiZeroFound = 0, KPlusFound = 0, KMinusFound = 0;
+    int PiPlusFound = 0, PiMinusFound = 0, PiZeroFound = 0, KPlusFound = 0, KMinusFound = 0,
+      LeptonFound = 0, NeutrinoFound = 0;
     for (int iDaughter = 0; iDaughter < getNDaug(); ++iDaughter) 
     {
       const EvtId daugId = getDaug(iDaughter);
@@ -117,8 +128,18 @@ void EvtBcVHad::parseDecay()
         iKMinus[KMinusFound] = iDaughter;
         KMinusFound++;
       }
-    }    
-    
+      else if (LeptonID.contains(daugId) && LeptonFound < 4)
+      {
+        iLepton[LeptonFound] = iDaughter;
+        LeptonFound++;
+      }
+      else if (NeutrinoID.contains(daugId) && NeutrinoFound < 4)
+      {
+        iNeutrino[NeutrinoFound] = iDaughter;
+        NeutrinoFound++;
+      }
+    }
+
     if (getNDaug() == 2 && PiPlusFound == 1)
     {
       out_code = 1; // pi+
@@ -163,6 +184,9 @@ void EvtBcVHad::parseDecay()
     {
       out_code = 11; // K+ pi+ pi+ pi- pi-
     }
+    else if(getNDaug()==3 && LeptonFound==1 && NeutrinoFound==1) {
+      out_code = 12; // e+ nu_e, mu+ nu_mu, tau+ nu_tau
+    }
     else
     {
       EvtGenReport(EVTGEN_ERROR, "EvtBcVHad")<<"Init: unknown decay"<<std::endl;
@@ -176,13 +200,19 @@ void EvtBcVHad::parseDecay()
 					     << ", iPiMinus = " << iPiMinus[i]
 					     << ", iPiZero = " << iPiZero[i]
 					     << ", iKPlus = " << iKPlus[i]
-					     << ", iKMinus = " << iKMinus[i] << std::endl;
+					     << ", iKMinus = " << iKMinus[i] 
+					     << ", iLepton = " << iLepton[i] 
+					     << ", iNeutruno = " << iNeutrino[i] 
+               << std::endl;
     }
     EvtGenReport(EVTGEN_INFO, "EvtBcVHad") << "PiPlusFound = " << PiPlusFound
 					   << ", PiMinusFound = " << PiMinusFound
 					   << ", PiZeroFound = " << PiZeroFound
 					   << ", KPlusFound = " << KPlusFound
-					   << ", KMinusFound = " << KMinusFound << std::endl;
+					   << ", KMinusFound = " << KMinusFound 
+					   << ", LeptonFound = " << LeptonFound 
+					   << ", NeutrinoFound = " << NeutrinoFound 
+             << std::endl;
 }
 
 //======================================================
@@ -190,9 +220,6 @@ void EvtBcVHad::init() {
 
     checkNArg(1);
     checkSpinParent(EvtSpinType::SCALAR);
-    for (int i = 1; i <= (getNDaug() - 1); i++) {
-        checkSpinDaughter(i, EvtSpinType::SCALAR);
-    }
 
     idVector = getDaug(0).getId();
     whichfit = int(getArg(0) + 0.1);
@@ -258,11 +285,12 @@ void EvtBcVHad::initProbMax() {
     else if (idVector == EvtPDL::getId("psi(2S)").getId() && whichfit == 1) setProbMax(2e6);
     else if (idVector == EvtPDL::getId("psi(2S)").getId() && whichfit == 2) setProbMax(8e4);
   } else {
-    EvtGenReport(EVTGEN_ERROR, "EvtBcVHad") << "probax: Have not yet implemented this final state in BC_VHAD model, out_code = " << out_code << std::endl;
-    for (int id = 0; id < (getNDaug() - 1); id++) {
-      EvtGenReport(EVTGEN_ERROR, "EvtBcVHad") << "Daug " << id << " " << EvtPDL::name(getDaug(id)).c_str() << std::endl;
-    }
-    ::abort();
+      EvtGenReport(EVTGEN_ERROR, "EvtBcVHad") << 
+        "probax: Have not yet implemented this final state in BC_VHAD model, out_code = " << out_code << std::endl;
+        for (int id = 0; id < (getNDaug() - 1); id++) {
+          EvtGenReport(EVTGEN_ERROR, "EvtBcVHad") << "Daug " << id << " " << EvtPDL::name(getDaug(id)).c_str() << std::endl;
+        }
+        // ::abort();
   }
 
 }
@@ -368,8 +396,10 @@ EvtVector4C EvtBcVHad::hardCurr(EvtParticle *root_particle) const {
 }
 
 
-void EvtBcVHad::decay_Psi(EvtParticle *root_particle, EvtVector4C hardCur) {
+void EvtBcVHad::decay_Psi(EvtParticle *root_particle) {
     EvtParticle* Jpsi = root_particle->getDaug(0);
+    EvtVector4C hardCur = hardCurr(root_particle);
+
     
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
@@ -405,8 +435,10 @@ void EvtBcVHad::decay_Psi(EvtParticle *root_particle, EvtVector4C hardCur) {
     }
 }
 
-void EvtBcVHad::decay_chiC1(EvtParticle *root_particle, EvtVector4C hardCur) {
+void EvtBcVHad::decay_chiC1(EvtParticle *root_particle) {
     EvtParticle* chiC1 = root_particle->getDaug(0);
+    EvtVector4C hardCur = hardCurr(root_particle);
+
     
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
@@ -441,8 +473,10 @@ void EvtBcVHad::decay_chiC1(EvtParticle *root_particle, EvtVector4C hardCur) {
 }
 
 
-void EvtBcVHad::decay_chiC0(EvtParticle *root_particle, EvtVector4C hardCur) {
+void EvtBcVHad::decay_chiC0(EvtParticle *root_particle) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
+    EvtVector4C hardCur = hardCurr(root_particle);
+
     
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
@@ -468,6 +502,40 @@ void EvtBcVHad::decay_chiC0(EvtParticle *root_particle, EvtVector4C hardCur) {
     vertex(amp);
 }
 
+void EvtBcVHad::decay_chiC0_mn(EvtParticle *root_particle) {
+    EvtParticle* chiC0 = root_particle->getDaug(0);
+    EvtVector4C hardCur;
+
+    
+    EvtVector4R
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = chiC0->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
+    double Q2 = Q.mass2();
+
+    // Calculate Bc -> V W form-factors
+    double fPlus(0.0), fMinus(0.0);
+
+    double m_meson = chiC0->mass();
+    double m_b = root_particle->mass();
+
+    ffmodel->getscalarff(root_particle->getId(),
+      chiC0->getId(), 
+      Q2, m_meson, &fPlus, &fMinus);
+
+
+    // Calculate Bc -> V W current
+    EvtVector4C H = fPlus*(p4b+p4meson) + fMinus*(p4b-p4meson);
+    EvtDiracSpinor spL, spN;
+    for(int iL=0; iL<2; ++iL) {
+      spL = root_particle->getDaug(iLepton[0])->spParent(iL);
+        spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
+        hardCur = EvtLeptonVCurrent(spL, spN);
+        EvtComplex amp = H*hardCur;
+        vertex(iL, amp);
+    }
+}
 
 //======================================================
 void EvtBcVHad::decay(EvtParticle *root_particle) {
@@ -475,16 +543,20 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     root_particle->initializePhaseSpace(getNDaug(), getDaugs());
 
     // Calculate hadronic current
-    EvtVector4C hardCur = hardCurr(root_particle);
 
-    if(idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("J/psi").getId()) {
-      decay_Psi(root_particle, hardCur);
+    if(out_code==12 && idVector == EvtPDL::getId("chi_c0").getId()) {
+      decay_chiC0_mn(root_particle);
     }
-    else if(idVector == EvtPDL::getId("chi_c0").getId()) {
-      decay_chiC0(root_particle, hardCur);
+    else if(out_code > 0 && (
+      idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("psi(2S)").getId()
+    )) {
+      decay_Psi(root_particle);
     }
-    else if(idVector == EvtPDL::getId("chi_c1").getId()) {
-      decay_chiC1(root_particle, hardCur);
+    else if(out_code>0 && idVector == EvtPDL::getId("chi_c0").getId()) {
+      decay_chiC0(root_particle);
+    }
+    else if(out_code>0 && idVector == EvtPDL::getId("chi_c1").getId()) {
+      decay_chiC1(root_particle);
     };
 
 
