@@ -440,7 +440,7 @@ void EvtBcVHad::decay_Psi(EvtParticle *root_particle) {
 /****
  * chi_c0 decay functions
 */
-EvtVector4C EvtBcVHad::bccc_current_chiC0(EvtParticle *root_particle) {
+EvtComplex EvtBcVHad::amp_chiC0(EvtParticle *root_particle, EvtVector4C hadCur) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
@@ -457,25 +457,23 @@ EvtVector4C EvtBcVHad::bccc_current_chiC0(EvtParticle *root_particle) {
       Q2, m_meson, &fPlus, &fMinus);
     // Calculate Bc -> V W current
     EvtVector4C H = fPlus*(p4b+p4meson) + fMinus*(p4b-p4meson);
-    return H;
+    return H*hadCur;
 }
 
 void EvtBcVHad::decay_chiC0(EvtParticle *root_particle) {
-    EvtVector4C bccc_current = bccc_current_chiC0(root_particle);
     EvtVector4C hardCur = hardCurr(root_particle);
-    EvtComplex amp = bccc_current*hardCur;
+    EvtComplex amp = amp_chiC0(root_particle, hardCur);
     vertex(amp);
 }
 
 void EvtBcVHad::decay_chiC0_mn(EvtParticle *root_particle) {
-    EvtVector4C bccc_current = bccc_current_chiC0(root_particle);
     EvtVector4C hadCur;
     EvtDiracSpinor spL, spN;
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
         spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
         hadCur = EvtLeptonVCurrent(spL, spN);
-        EvtComplex amp = bccc_current*hadCur;
+        EvtComplex amp = amp_chiC0(root_particle , hadCur);
         vertex(iL, amp);
     }
 }
@@ -483,7 +481,7 @@ void EvtBcVHad::decay_chiC0_mn(EvtParticle *root_particle) {
 /****
  * chi_c1 decay functions
 */
-EvtVector4C EvtBcVHad::bccc_current_chiC1(EvtParticle *root_particle, int iPol) {
+EvtComplex EvtBcVHad::amp_chiC1(EvtParticle *root_particle, EvtVector4C hadCur, int iPol) {
     EvtParticle* chiC1 = root_particle->getDaug(0);
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
@@ -509,20 +507,18 @@ EvtVector4C EvtBcVHad::bccc_current_chiC1(EvtParticle *root_particle, int iPol) 
     H.addDirProd(Q, (hV3/m_b)*p4meson);
     H += 2*EvtComplex(0.0, hA/mVar)*dual(EvtGenFunctions::directProd(p4b, p4meson));
     EvtVector4C eps = chiC1->epsParent(iPol).conj(); // psi-meson polarization vector
-    return H.cont1(eps);
+    return H.cont1(eps)*hadCur;
 }
 
 void EvtBcVHad::decay_chiC1(EvtParticle *root_particle) {
     EvtVector4C hardCur = hardCurr(root_particle);
     for(int i=0; i<3; ++i) {
-      EvtVector4C bccc_current = bccc_current_chiC1(root_particle, i);
-      EvtComplex amp = bccc_current*hardCur;
+      EvtComplex amp = amp_chiC1(root_particle, hardCur, i);
       vertex(i, amp);
     };
 }
 
 void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
-    EvtVector4C bccc_current;
     EvtVector4C hadCur;
     EvtDiracSpinor spL, spN;
     for(int iL=0; iL<2; ++iL) {
@@ -530,87 +526,65 @@ void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
       spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
       hadCur = EvtLeptonVCurrent(spL, spN);
       for(int iChi=0; iChi<3; ++iChi) {
-         bccc_current = bccc_current_chiC1(root_particle, iChi);
-        EvtComplex amp = bccc_current*hadCur;
+        EvtComplex amp = amp_chiC1(root_particle, hadCur, iChi);
         vertex(iChi, iL, amp);
       }
     }
 }
 
-
-void EvtBcVHad::decay_chiC2(EvtParticle *root_particle) {
-    EvtParticle* chiC2 = root_particle->getDaug(0);
-    EvtVector4C hardCur = hardCurr(root_particle);
-
+EvtComplex EvtBcVHad::amp_chiC2(EvtParticle *root_particle, EvtVector4C hadCur, int iPol)
+{
+      EvtParticle* chiC2 = root_particle->getDaug(0);
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
       p4meson = chiC2->getP4(), // J/psi momenta
       Q = p4b - p4meson, 
       p4Sum = p4meson + p4b;
-    double Q2 = Q.mass2();
+      double Q2 = Q.mass2();
 
-    // Calculate Bc -> V W form-factors
-    double tV,  tA1, tA2, tA3;
+      // Calculate Bc -> V W form-factors
+      double tV,  tA1, tA2, tA3;
 
-    double m_meson = chiC2->mass();
-    double m_b = root_particle->mass();
-    double mVar = m_b + m_meson;
+      double m_meson = chiC2->mass();
+      double m_b = root_particle->mass();
+      double mVar = m_b + m_meson;
 
-    ffmodel->gettensorff(root_particle->getId(),  chiC2->getId(), 
-      Q2, m_meson, &tV, &tA1, &tA2, &tA3);
+      ffmodel->gettensorff(root_particle->getId(),  chiC2->getId(), 
+        Q2, m_meson, &tV, &tA1, &tA2, &tA3);
 
 
-    // Calculate Bc -> V W current
-    EvtTensor4C ep1p2 = dual(EvtGenFunctions::directProd(p4b, p4meson));
-    EvtTensor4C Hh = EvtComplex(0, 2*tV/mVar/m_b)*EvtGenFunctions::directProd(ep1p2.cont1(hardCur), p4b);
-    Hh += EvtGenFunctions::directProd(mVar*tA1/m_b*p4b, hardCur);
-    Hh += EvtGenFunctions::directProd(p4b, p4b)*(tA2*p4b*hardCur+tA3*p4meson*hardCur)*pow(m_b,-2);
+      // Calculate Bc -> V W current
+      EvtTensor4C ep1p2 = dual(EvtGenFunctions::directProd(p4b, p4meson));
+      EvtTensor4C Hh = EvtComplex(0, 2*tV/mVar/m_b)*EvtGenFunctions::directProd(ep1p2.cont1(hadCur), p4b);
+      Hh += EvtGenFunctions::directProd(mVar*tA1/m_b*p4b, hadCur);
+      Hh += EvtGenFunctions::directProd(p4b, p4b)*(tA2*p4b*hadCur+tA3*p4meson*hadCur)*pow(m_b,-2);
+      
+      EvtTensor4C eps = chiC2->epsTensorParent(iPol).conj(); // chi_c2 polarization tensor
+      return cont11(Hh,eps).trace();
+
+}
+void EvtBcVHad::decay_chiC2(EvtParticle *root_particle)
+{
+    EvtVector4C hadCur = hardCurr(root_particle);
     for (int i = 0; i < 5; i++) {
-        EvtTensor4C eps = chiC2->epsTensorParent(i).conj(); // chi_c2 polarization tensor
-        EvtComplex amp = cont11(Hh,eps).trace();
+        EvtComplex amp = amp_chiC2(root_particle, hadCur, i);
         vertex(i, amp);
     }
 }
 
-
 void EvtBcVHad::decay_chiC2_mn(EvtParticle *root_particle) {
-    EvtParticle* chiC2 = root_particle->getDaug(0);
-    EvtVector4C hardCur;
-
-    EvtVector4R
-      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
-      p4meson = chiC2->getP4(), // J/psi momenta
-      Q = p4b - p4meson, 
-      p4Sum = p4meson + p4b;
-    double Q2 = Q.mass2();
-
-    // Calculate Bc -> V W form-factors
-    double tV,  tA1, tA2, tA3;
-
-    double m_meson = chiC2->mass();
-    double m_b = root_particle->mass();
-    double mVar = m_b + m_meson;
-
-    ffmodel->gettensorff(root_particle->getId(),  chiC2->getId(), 
-      Q2, m_meson, &tV, &tA1, &tA2, &tA3);
-
-
-    // Calculate Bc -> V W current
-    EvtTensor4C ep1p2 = dual(EvtGenFunctions::directProd(p4b, p4meson));
+    EvtVector4C hadCur;
     EvtDiracSpinor spL, spN;
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
-        spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-        hardCur = EvtLeptonVCurrent(spL, spN);
-        EvtTensor4C Hh = EvtComplex(0, 2*tV/mVar/m_b)*EvtGenFunctions::directProd(ep1p2.cont1(hardCur), p4b);
-        Hh += EvtGenFunctions::directProd(mVar*tA1/m_b*p4b, hardCur);
-        Hh += EvtGenFunctions::directProd(p4b, p4b)*(tA2*p4b*hardCur+tA3*p4meson*hardCur)*pow(m_b,-2);
-        for (int i = 0; i < 5; i++) {
-            EvtTensor4C eps = chiC2->epsTensorParent(i).conj(); // chi_c2 polarization tensor
-            EvtComplex amp = cont11(Hh,eps).trace();
-            vertex(i, iL, amp);
+      spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
+      hadCur = EvtLeptonVCurrent(spL, spN);
+      for(int iChi=0; iChi<5; ++iChi) {
+        EvtComplex amp = amp_chiC2(root_particle, hadCur, iChi);
+        vertex(iChi, iL, amp);
       }
     }
+
 }
 
 

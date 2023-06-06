@@ -48,17 +48,18 @@ protected:
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
     void parseDecay(void);
     void decay_Psi(EvtParticle *p);
+    void decay_Psi_mn(EvtParticle *p);
 
-    EvtVector4C bccc_current_chiC0(EvtParticle *root_particle);
+    EvtComplex amp_chiC0(EvtParticle *root_particle, EvtVector4C hadCur);
     void decay_chiC0(EvtParticle *p);
     void decay_chiC0_mn(EvtParticle *p);
 
-    EvtVector4C bccc_current_chiC1(EvtParticle *root_particle, int iPlo);
+    EvtComplex amp_chiC1(EvtParticle *root_particle, EvtVector4C hadCur, int iPol);
     void decay_chiC1(EvtParticle *p);
     void decay_chiC1_mn(EvtParticle *p);
 
+    EvtComplex amp_chiC2(EvtParticle *root_particle, EvtVector4C harCur, int iPol);
     void decay_chiC2(EvtParticle *root_particle);  
-    void decay_Psi_mn(EvtParticle *p);
     void decay_chiC2_mn(EvtParticle *p);
 
 private:
