@@ -503,8 +503,8 @@ void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
 
       // Calculate Bc -> V W current
       EvtTensor4C H = hV1*mVar*EvtTensor4C::g();
-      H.addDirProd((hV2/m_b)*p4b, Q);
-      H.addDirProd( (hV3/m_b)*p4meson, Q);
+      H.addDirProd(Q, (hV2/m_b)*p4b);
+      H.addDirProd(Q, (hV3/m_b)*p4meson);
       H += 2*EvtComplex(0.0, hA/mVar)*dual(EvtGenFunctions::directProd(p4b, p4meson));
       EvtVector4C Heps = H.cont2(hardCur);
 
