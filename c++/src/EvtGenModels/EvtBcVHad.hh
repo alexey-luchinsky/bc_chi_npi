@@ -48,6 +48,9 @@ protected:
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
     void parseDecay(void);
     void decay_Psi(EvtParticle *p);
+
+    EvtVector4C bccc_current_chiC0(EvtParticle *root_particle);
+
     void decay_chiC0(EvtParticle *p);
     void decay_chiC1(EvtParticle *p);
     void decay_chiC2(EvtParticle *root_particle);

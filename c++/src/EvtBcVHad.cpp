@@ -516,67 +516,42 @@ void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
     };
 }
 
-
-void EvtBcVHad::decay_chiC0(EvtParticle *root_particle) {
+EvtVector4C EvtBcVHad::bccc_current_chiC0(EvtParticle *root_particle) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
-    EvtVector4C hardCur = hardCurr(root_particle);
-
-    
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
       p4meson = chiC0->getP4(), // J/psi momenta
       Q = p4b - p4meson, 
       p4Sum = p4meson + p4b;
     double Q2 = Q.mass2();
-
     // Calculate Bc -> V W form-factors
     double fPlus(0.0), fMinus(0.0);
-
     double m_meson = chiC0->mass();
     double m_b = root_particle->mass();
-
     ffmodel->getscalarff(root_particle->getId(),
       chiC0->getId(), 
       Q2, m_meson, &fPlus, &fMinus);
-
-
     // Calculate Bc -> V W current
     EvtVector4C H = fPlus*(p4b+p4meson) + fMinus*(p4b-p4meson);
-    EvtComplex amp = H*hardCur;
+    return H;
+}
+
+void EvtBcVHad::decay_chiC0(EvtParticle *root_particle) {
+    EvtVector4C bccc_current = bccc_current_chiC0(root_particle);
+    EvtVector4C hardCur = hardCurr(root_particle);
+    EvtComplex amp = bccc_current*hardCur;
     vertex(amp);
 }
 
 void EvtBcVHad::decay_chiC0_mn(EvtParticle *root_particle) {
-    EvtParticle* chiC0 = root_particle->getDaug(0);
-    EvtVector4C hardCur;
-
-    
-    EvtVector4R
-      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
-      p4meson = chiC0->getP4(), // J/psi momenta
-      Q = p4b - p4meson, 
-      p4Sum = p4meson + p4b;
-    double Q2 = Q.mass2();
-
-    // Calculate Bc -> V W form-factors
-    double fPlus(0.0), fMinus(0.0);
-
-    double m_meson = chiC0->mass();
-    double m_b = root_particle->mass();
-
-    ffmodel->getscalarff(root_particle->getId(),
-      chiC0->getId(), 
-      Q2, m_meson, &fPlus, &fMinus);
-
-
-    // Calculate Bc -> V W current
-    EvtVector4C H = fPlus*(p4b+p4meson) + fMinus*(p4b-p4meson);
+    EvtVector4C bccc_current = bccc_current_chiC0(root_particle);
+    EvtVector4C hadCur;
     EvtDiracSpinor spL, spN;
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
         spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-        hardCur = EvtLeptonVCurrent(spL, spN);
-        EvtComplex amp = H*hardCur;
+        hadCur = EvtLeptonVCurrent(spL, spN);
+        EvtComplex amp = bccc_current*hadCur;
         vertex(iL, amp);
     }
 }

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    239113,       5572]
-NotebookOptionsPosition[    226448,       5364]
-NotebookOutlinePosition[    226844,       5380]
-CellTagsIndexPosition[    226801,       5377]
+NotebookDataLength[    214405,       5029]
+NotebookOptionsPosition[    202071,       4826]
+NotebookOutlinePosition[    202467,       4842]
+CellTagsIndexPosition[    202424,       4839]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3843,545 +3843,6 @@ Cell[BoxData[{
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
- RowBox[{"?", "ReadList"}]], "Input",
- CellChangeTimes->{{3.895044613543977*^9, 3.895044617731151*^9}},
- CellLabel->
-  "In[233]:=",ExpressionUUID->"27b176a8-4924-4aae-a2e3-4f1f212a4d01"],
-
-Cell[BoxData[
- FormBox[
-  InterpretationBox[
-   StyleBox[
-    FrameBox[
-     DynamicModuleBox[{System`InformationDump`open$$ = False, 
-      System`InformationDump`mouseOver$$ = False}, 
-      PaneSelectorBox[{True->
-       TagBox[GridBox[{
-          {
-           ItemBox[
-            PaneBox[
-             StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-              StripOnInput->False,
-              BaseStyle -> None],
-             FrameMargins->{{4, 0}, {-1, 1}}],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False], 
-           ItemBox[
-            PaneBox[
-             TooltipBox[
-              ButtonBox[
-               PaneSelectorBox[{False->
-                
-                DynamicBox[FEPrivate`FrontEndResource[
-                 "FEBitmaps", "InformationHelpIcon"]], True->
-                
-                DynamicBox[FEPrivate`FrontEndResource[
-                 "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
-                 CurrentValue["MouseOver"]]],
-               Appearance->None,
-               BaseStyle->"Link",
-               ButtonData->"paclet:ref/ReadList",
-               ButtonNote->"paclet:ref/ReadList"],
-              "\"paclet:ref/ReadList\""],
-             FrameMargins->{{0, 4}, {0, 2}}],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False]},
-          {
-           ItemBox[
-            PaneBox[
-             
-             StyleBox["\<\"\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\\\"TI\\\
-\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\"]\\\"}]\\) reads \
-all the remaining expressions in a file and returns a list of them. \\n\\!\\(\
-\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-StyleBox[\\\"type\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) reads objects of the \
-specified type from a file, until the end of the file is reached. The list of \
-objects read is returned. \\n\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"type\\\", \\\"TI\\\"], \
-StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"type\\\
-\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
-\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) reads objects \
-with a sequence of types, until the end of the file is reached. \
-\\n\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-StyleBox[\\\"types\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) reads only the first \
-\\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) objects of the specified types. \
-\"\>", "InformationUsageText",
-              StripOnInput->False,
-              LineSpacing->{1.5, 1.5, 3.}],
-             FrameMargins->{{10, 10}, {8, 10}}],
-            BaseStyle->"InformationUsageSubtitleBackground",
-            StripOnInput->False], 
-           ItemBox["\<\"\"\>",
-            BaseStyle->"InformationUsageSubtitleBackground",
-            StripOnInput->False]},
-          {
-           PaneBox[GridBox[{
-              {
-               
-               DynamicModuleBox[{System`InformationDump`open$$ = {
-                False, False, False, False, False, False}}, 
-                StyleBox[GridBox[{
-                   {
-                    TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"Documentation\"",
-                    TooltipStyle->"TextStyling"],
-                    Annotation[#, "Documentation", "Tooltip"]& ], 
-                    TemplateBox[{
-                    
-                    TemplateBox[{
-                    "\"Local \[RightGuillemet]\"", "paclet:ref/ReadList", 
-                    "paclet:ref/ReadList", "Link", {
-                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
-                    BaseStyle -> {
-                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
-                    "HyperlinkTemplate"], "\"  \"", 
-                    StyleBox[
-                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
-                    "\"  \"", 
-                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
-                    URL[
-                    "http://reference.wolfram.com/language/ref/ReadList.html"]\
-, None}, "http://reference.wolfram.com/language/ref/ReadList.html", 
-                    "Hyperlink", {
-                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
-                    BaseStyle -> {
-                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
-                    "HyperlinkTemplate"]},
-                    "RowDefault"]},
-                   {
-                    PaneSelectorBox[{True->
-                    ButtonBox[
-                    PaneSelectorBox[{False->
-                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
-                    StyleBox[
-                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
-                    False], 
-                    DynamicBox[
-                    FEPrivate`FrontEndResource[
-                    "FEBitmaps", "DownPointerOpener"]]},
-                    "RowWithSeparators"], True->
-                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
-                    StyleBox[
-                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
-                    False], 
-                    DynamicBox[
-                    FEPrivate`FrontEndResource[
-                    "FEBitmaps", "DownPointerOpenerHot"]]},
-                    "RowWithSeparators"]}, Dynamic[
-                    CurrentValue["MouseOver"]],
-                    FrameMargins->0,
-                    ImageSize->Automatic],
-                    Appearance->None,
-                    BaseStyle->None,
-                    
-                    ButtonFunction:>(Part[System`InformationDump`open$$, 3] = 
-                    False),
-                    Evaluator->Automatic,
-                    FrameMargins->0,
-                    ImageMargins->0,
-                    Method->"Preemptive"], False->
-                    ButtonBox[
-                    PaneSelectorBox[{False->
-                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
-                    StyleBox[
-                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
-                    False], 
-                    DynamicBox[
-                    FEPrivate`FrontEndResource[
-                    "FEBitmaps", "RightPointerOpener"]]},
-                    "RowWithSeparators"], True->
-                    TemplateBox[{"\[ThickSpace]", "\"\[ThickSpace]\"", 
-                    StyleBox[
-                    "\"Options\"", "InformationRowLabel", StripOnInput -> 
-                    False], 
-                    DynamicBox[
-                    FEPrivate`FrontEndResource[
-                    "FEBitmaps", "RightPointerOpenerHot"]]},
-                    "RowWithSeparators"]}, Dynamic[
-                    CurrentValue["MouseOver"]],
-                    FrameMargins->0,
-                    ImageSize->Automatic],
-                    Appearance->None,
-                    BaseStyle->None,
-                    
-                    ButtonFunction:>(Part[System`InformationDump`open$$, 3] = 
-                    True),
-                    Evaluator->Automatic,
-                    FrameMargins->0,
-                    ImageMargins->0,
-                    Method->"Preemptive"]}, Dynamic[
-                    FEPrivate`Part[System`InformationDump`open$$, 3]]], 
-                    PaneSelectorBox[{True->GridBox[{
-                    {
-                    RowBox[{"NullRecords", "\[Rule]", "False"}]},
-                    {
-                    RowBox[{"NullWords", "\[Rule]", "False"}]},
-                    {
-                    RowBox[{"RecordLists", "\[Rule]", "False"}]},
-                    {
-                    RowBox[{"RecordSeparators", "\[Rule]", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"\<\"\\r\\n\"\>", ",", "\<\"\\n\"\>", 
-                    ",", "\<\"\\r\"\>"}], "}"}]}]},
-                    {
-                    RowBox[{"TokenWords", "\[Rule]", 
-                    RowBox[{"{", "}"}]}]},
-                    {
-                    RowBox[{"WordSeparators", "\[Rule]", 
-                    RowBox[{"{", 
-                    RowBox[{"\<\" \"\>", ",", "\<\"\\t\"\>"}], "}"}]}]},
-                    {
-                    StyleBox[
-                    
-                    TemplateBox[{
-                    "\"(\"", "\"\[InvisibleSpace]\"", "6", "\" total)\""},
-                    "RowDefault"], "InformationRowOpener",
-                    StripOnInput->False]}
-                    },
-                    BaselinePosition->{Baseline, {1, 1}},
-                    DefaultBaseStyle->"Column",
-                    GridBoxAlignment->{"Columns" -> {{Left}}},
-                    
-                    GridBoxItemSize->{
-                    "Columns" -> {{Automatic}}, "Rows" -> {{1.}}}], False->
-                    RowBox[{
-                    RowBox[{"NullRecords", "\[Rule]", "False"}], 
-                    "\[ThinSpace]", 
-                    StyleBox["\<\"\[Ellipsis]\"\>", "InformationRowOpener",
-                    StripOnInput->False], "\[ThinSpace]", 
-                    StyleBox[
-                    
-                    TemplateBox[{
-                    "\"(\"", "\"\[InvisibleSpace]\"", "6", "\" total)\""},
-                    "RowDefault"], "InformationRowOpener",
-                    StripOnInput->False]}]}, Dynamic[
-                    FEPrivate`Part[System`InformationDump`open$$, 3]],
-                    BaselinePosition->Baseline,
-                    ImageSize->Automatic]},
-                   {
-                    TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"Attributes\"",
-                    TooltipStyle->"TextStyling"],
-                    Annotation[#, "Attributes", "Tooltip"]& ], 
-                    RowBox[{"{", "Protected", "}"}]},
-                   {
-                    TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"FullName\"",
-                    TooltipStyle->"TextStyling"],
-                    
-                    Annotation[#, "FullName", 
-                    "Tooltip"]& ], "\<\"System`ReadList\"\>"}
-                  },
-                  AutoDelete->False,
-                  GridBoxAlignment->{"Columns" -> {Right, Left}},
-                  GridBoxDividers->None,
-                  GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
-                  GridBoxSpacings->{"Columns" -> {
-                    Offset[0.27999999999999997`], {
-                    Offset[0.5599999999999999]}, 
-                    Offset[0.27999999999999997`]}, "Rows" -> {
-                    Offset[0.2], {
-                    Offset[0.8]}, 
-                    Offset[0.2]}}], "DialogStyle",
-                 StripOnInput->False],
-                DynamicModuleValues:>{}]}
-             },
-             DefaultBaseStyle->"Column",
-             GridBoxAlignment->{"Columns" -> {{Left}}},
-             GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
-             
-             GridBoxItemSize->{
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-             GridBoxSpacings->{"Columns" -> {
-                 Offset[0.27999999999999997`], {
-                  Offset[0.5599999999999999]}, 
-                 Offset[0.27999999999999997`]}, "Rows" -> {
-                 Offset[0.2], {
-                  Offset[3.6]}, 
-                 Offset[0.2]}}],
-            FrameMargins->{{6, 6}, {6, 3}}], ""},
-          {
-           ItemBox[
-            TagBox[
-             ButtonBox[
-              PaneSelectorBox[{False->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "UpPointerOpener"]], True->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
-               System`InformationDump`mouseOver$$]],
-              Alignment->Left,
-              Appearance->{"Default" -> None},
-              
-              ButtonFunction:>FEPrivate`Set[
-               System`InformationDump`open$$, False],
-              Evaluator->Automatic,
-              FrameMargins->{{9, 0}, {0, 0}},
-              ImageMargins->0,
-              ImageSize->Full,
-              Method->"Preemptive"],
-             
-             EventHandlerTag[{
-              "MouseEntered" :> 
-               FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-               "MouseExited" :> 
-               FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-               Method -> "Preemptive", PassEventsDown -> Automatic, 
-               PassEventsUp -> True}]],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False], "\[SpanFromLeft]"}
-         },
-         AutoDelete->False,
-         FrameStyle->Directive[
-           GrayLevel[0.8], 
-           Thickness[Tiny]],
-         GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-         
-         GridBoxDividers->{
-          "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Grid"], False->
-       TagBox[GridBox[{
-          {
-           ItemBox[
-            PaneBox[
-             StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-              StripOnInput->False],
-             FrameMargins->{{4, 0}, {-1, 1}}],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False], 
-           ItemBox[
-            PaneBox[
-             TooltipBox[
-              ButtonBox[
-               PaneSelectorBox[{False->
-                
-                DynamicBox[FEPrivate`FrontEndResource[
-                 "FEBitmaps", "InformationHelpIcon"],
-                 ImageSizeCache->{13., {4., 9.}}], True->
-                
-                DynamicBox[FEPrivate`FrontEndResource[
-                 "FEBitmaps", "InformationHelpIconHot"],
-                 ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
-                 CurrentValue["MouseOver"]]],
-               Appearance->None,
-               BaseStyle->"Link",
-               ButtonData->"paclet:ref/ReadList",
-               ButtonNote->"paclet:ref/ReadList"],
-              "\"paclet:ref/ReadList\""],
-             FrameMargins->{{0, 4}, {0, 2}}],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False]},
-          {
-           ItemBox[
-            PaneBox[
-             
-             StyleBox["\<\"\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\\\"TI\\\
-\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\"]\\\"}]\\) reads \
-all the remaining expressions in a file and returns a list of them. \\n\\!\\(\
-\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-StyleBox[\\\"type\\\", \\\"TI\\\"]}], \\\"]\\\"}]\\) reads objects of the \
-specified type from a file, until the end of the file is reached. The list of \
-objects read is returned. \\n\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-RowBox[{\\\"{\\\", RowBox[{SubscriptBox[StyleBox[\\\"type\\\", \\\"TI\\\"], \
-StyleBox[\\\"1\\\", \\\"TR\\\"]], \\\",\\\", SubscriptBox[StyleBox[\\\"type\\\
-\", \\\"TI\\\"], StyleBox[\\\"2\\\", \\\"TR\\\"]], \\\",\\\", StyleBox[\\\"\
-\[Ellipsis]\\\", \\\"TR\\\"]}], \\\"}\\\"}]}], \\\"]\\\"}]\\) reads objects \
-with a sequence of types, until the end of the file is reached. \
-\\n\\!\\(\\*RowBox[{\\\"ReadList\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"\\\\\\\"\\\\!\\\\(\\\\*StyleBox[\\\\\\\"file\\\\\\\",\\\\\
-\\\"TI\\\\\\\"]\\\\)\\\\\\\"\\\", ShowStringCharacters->True], \\\",\\\", \
-StyleBox[\\\"types\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"n\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) reads only the first \
-\\!\\(\\*StyleBox[\\\"n\\\", \\\"TI\\\"]\\) objects of the specified types. \
-\"\>", "InformationUsageText",
-              StripOnInput->False,
-              LineSpacing->{1.5, 1.5, 3.}],
-             FrameMargins->{{10, 10}, {8, 10}}],
-            BaseStyle->"InformationUsageSubtitleBackground",
-            StripOnInput->False], 
-           ItemBox["\<\"\"\>",
-            BaseStyle->"InformationUsageSubtitleBackground",
-            StripOnInput->False]},
-          {
-           ItemBox[
-            TagBox[
-             ButtonBox[
-              PaneSelectorBox[{False->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "DownPointerOpener"],
-                ImageSizeCache->{10., {2., 8.}}], True->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "DownPointerOpenerHot"],
-                ImageSizeCache->{10., {2., 8.}}]}, Dynamic[
-               System`InformationDump`mouseOver$$]],
-              Alignment->Left,
-              Appearance->{"Default" -> None},
-              
-              ButtonFunction:>FEPrivate`Set[
-               System`InformationDump`open$$, True],
-              Evaluator->Automatic,
-              FrameMargins->{{9, 0}, {0, 0}},
-              ImageMargins->0,
-              ImageSize->Full,
-              Method->"Preemptive"],
-             EventHandlerTag[{
-              "MouseEntered" :> 
-               FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-               "MouseExited" :> 
-               FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-               Method -> "Preemptive", PassEventsDown -> Automatic, 
-               PassEventsUp -> True}]],
-            BaseStyle->"InformationTitleBackground",
-            StripOnInput->False], "\[SpanFromLeft]"}
-         },
-         AutoDelete->False,
-         FrameStyle->Directive[
-           GrayLevel[0.8], 
-           Thickness[Tiny]],
-         GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-         
-         GridBoxDividers->{
-          "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-         GridBoxItemSize->{
-          "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-        "Grid"]}, Dynamic[System`InformationDump`open$$],
-       BaselinePosition->Baseline,
-       FrameMargins->0,
-       ImageSize->Automatic],
-      DynamicModuleValues:>{}],
-     BaseStyle->"InformationGridFrame",
-     StripOnInput->False], "InformationGridPlain",
-    StripOnInput->False],
-   InformationData[
-    Association[
-    "ObjectType" -> "Symbol", "Usage" -> 
-     "\!\(\*RowBox[{\"ReadList\", \"[\", \
-StyleBox[\"\\\"\\!\\(\\*StyleBox[\\\"file\\\",\\\"TI\\\"]\\)\\\"\", \
-ShowStringCharacters->True], \"]\"}]\) reads all the remaining expressions in \
-a file and returns a list of them. \n\!\(\*RowBox[{\"ReadList\", \"[\", \
-RowBox[{StyleBox[\"\\\"\\!\\(\\*StyleBox[\\\"file\\\",\\\"TI\\\"]\\)\\\"\", \
-ShowStringCharacters->True], \",\", StyleBox[\"type\", \"TI\"]}], \"]\"}]\) \
-reads objects of the specified type from a file, until the end of the file is \
-reached. The list of objects read is returned. \n\!\(\*RowBox[{\"ReadList\", \
-\"[\", RowBox[{StyleBox[\"\\\"\\!\\(\\*StyleBox[\\\"file\\\",\\\"TI\\\"]\\)\\\
-\"\", ShowStringCharacters->True], \",\", RowBox[{\"{\", \
-RowBox[{SubscriptBox[StyleBox[\"type\", \"TI\"], StyleBox[\"1\", \"TR\"]], \
-\",\", SubscriptBox[StyleBox[\"type\", \"TI\"], StyleBox[\"2\", \"TR\"]], \",\
-\", StyleBox[\"\[Ellipsis]\", \"TR\"]}], \"}\"}]}], \"]\"}]\) reads objects \
-with a sequence of types, until the end of the file is reached. \n\
-\!\(\*RowBox[{\"ReadList\", \"[\", \
-RowBox[{StyleBox[\"\\\"\\!\\(\\*StyleBox[\\\"file\\\",\\\"TI\\\"]\\)\\\"\", \
-ShowStringCharacters->True], \",\", StyleBox[\"types\", \"TI\"], \",\", \
-StyleBox[\"n\", \"TI\"]}], \"]\"}]\) reads only the first \
-\!\(\*StyleBox[\"n\", \"TI\"]\) objects of the specified types. ", 
-     "Documentation" -> 
-     Association[
-      "Local" -> "paclet:ref/ReadList", "Web" -> 
-       "http://reference.wolfram.com/language/ref/ReadList.html"], 
-     "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
-     "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
-     "FormatValues" -> None, 
-     "Options" -> {
-      NullRecords -> False, NullWords -> False, RecordLists -> False, 
-       RecordSeparators -> {"\n\n", "\n", "\n"}, TokenWords -> {}, 
-       WordSeparators -> {" ", "\t"}}, "Attributes" -> {Protected}, 
-     "FullName" -> "System`ReadList"], False]], TraditionalForm]], "Output",
- CellChangeTimes->{3.895044619393358*^9},
- CellLabel->
-  "Out[233]=",ExpressionUUID->"465ca964-5d61-4201-8483-02266c163772"],
-
-Cell[BoxData[
- FormBox[
-  GraphicsBox[{{}, 
-    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.011000000000000001`],
-      AbsoluteThickness[1.6], PointBox[CompressedData["
-1:eJwBMQPO/CFib1JlAgAAADIAAAACAAAAaPecpyJw2D5bcia3N2n1P1CLN4e5
-UfI+cSYBxSMM9T9pNVQOaof+PknmomtwrPU/BAlLiI1eBT/4zViPVjD1PxBe
-2ctleQs/U3TJ3Yyf9D8wJn0mH8oQP4gh3t9FJPU/4M8y4ovXEz/091J40Ez0
-P4AUnqf35BY/vJxtyQXC9D8fWQltY/IZP5lR4ima3fQ/E5xRZtD/HD+G2tvS
-D6/0P1pw3hWeBiA/9PdSeNBM9D+pEpT4U40hP/MM0GwN2/M/JDQ4dQoUIz80
-1w7rMsHzP3TW7VfAmiQ/RAcTNYd68z/DeKM6diEmP2euHdZlYvM/PZpHtyyo
-Jz/4cp8cBejyP448/ZniLik/+69z02Zc8j/d3rJ8mLUqP/aHHBFCdvI/VwBX
-+U48LD+MdPUZBuLxP6aiDNwEwy0/KHSo8LGl8T/2RMK+ukkvPzKR0mweB/E/
-ODOznThoMD/Hfat14nLwP2EEDo+TKzE/AsQTMHBv8D+J1WiA7u4xPzCmT2Fb
-lfA/Rea6vkmyMj9OFNfnIN7tP263FbCkdTM/6GW5Ebub7j8qyGfu/zg0P4gx
-RKkYQu4/UpnC31r8ND8nCMMlbKTsP3tqHdG1vzU/Axq2d1dH7D83e28PEYM2
-P6lM1k3Oteg/X0zKAGxGNz985CAy9m/pP4cdJfLGCTg/iF3Kr9XU6D9ELncw
-Is04P//26TawDuY/bP/RIX2QOT/YW9Jqq2bkP5TQLBPYUzo/dwEGtDra4j9Q
-4X5RMxc7P5lvdecmfeI/ebLZQo7aOz8ixZ1ea6fhP6GDNDTpnTw/WR9JKAE6
-4D9elIZyRGE9P/KKM8hVU94/hmXhY58kPj9FPF0GMQrbP642PFX65z4/CRQU
-sxxw1T9rR46TVas/PxghwBLdLdI/Sox0Qlg3QD9x1F0bItXQP930IbsFmUA/
-0vaOnkuGyz88/Upas/pAP5RcD3BSYsU/z2X40mBcQT9wN/NxjjbAPy9uIXIO
-vkE/ZR5UPfQ4tT/D1s7qux9CPxKmxWwLx6g/Vj98Y2mBQj+U6QfddLeKP7VH
-pQIX40I/GsZASxWUSz/geXBC
-      "]]}, {{}, {}}},
-   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-   Axes->{True, True},
-   AxesLabel->{None, None},
-   AxesOrigin->{0, 0},
-   DisplayFunction->Identity,
-   Frame->{{False, False}, {False, False}},
-   FrameLabel->{{None, None}, {None, None}},
-   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-   GridLines->{None, None},
-   GridLinesStyle->Directive[
-     GrayLevel[0.5, 0.4]],
-   Method->{
-    "OptimizePlotMarkers" -> True, "OptimizePlotMarkers" -> True, 
-     "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
-         Identity[
-          Part[#, 1]], 
-         Identity[
-          Part[#, 2]]}& ), "CopiedValueFunction" -> ({
-         Identity[
-          Part[#, 1]], 
-         Identity[
-          Part[#, 2]]}& )}},
-   PlotRange->{{0, 0.00057638763}, {0, 1.3545994}},
-   PlotRangeClipping->True,
-   PlotRangePadding->{{
-      Scaled[0.02], 
-      Scaled[0.02]}, {
-      Scaled[0.02], 
-      Scaled[0.05]}},
-   Ticks->{Automatic, Automatic}], TraditionalForm]], "Output",
- CellChangeTimes->{{3.895044725499228*^9, 3.895044759153124*^9}},
- CellLabel->
-  "Out[248]=",ExpressionUUID->"88a33ca5-5b02-4423-8fe4-b1619a57dd78"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{"out", " ", "=", " ", "\"\<chi_c0\>\""}], 
@@ -4465,7 +3926,7 @@ Cell[BoxData[{
    3.895045029103866*^9}, {3.8950454456261187`*^9, 3.895045451756353*^9}, {
    3.895045697661875*^9, 3.895045727452029*^9}},
  CellLabel->
-  "In[298]:=",ExpressionUUID->"f714aefd-9eb3-44c0-a1a4-c04f4049595e"],
+  "In[346]:=",ExpressionUUID->"f714aefd-9eb3-44c0-a1a4-c04f4049595e"],
 
 Cell[BoxData[
  FormBox[
@@ -4526,7 +3987,7 @@ A7Ua53OKQJjm06I1jaFdmSV36HGFQIWDKX2zGFJ2bet4v1AAfriBU6YYQ7Pu
 b15yIwtgyJ83uE6OITdy7da1YfmQZ1Rf+nIBQ6XLM+UnJHngyc4NTl7C0EOV
 0n+dvZYHG9LC9xz+QsznpkgtpRRgHXKTr65iKFWv1HQwnAL/AJeehCI=
          "]]},
-       Annotation[#, "Charting`Private`Tag$96358#1"]& ]}, {}}, {{}, 
+       Annotation[#, "Charting`Private`Tag$104273#1"]& ]}, {}}, {{}, 
      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
       0.011000000000000001`], AbsoluteThickness[1.6], 
       GeometricTransformationBox[
@@ -4594,9 +4055,10 @@ jD8GZoUi3XcgQFLGz0Z0ME0/VdGJ6Q==
       Scaled[0.05]}},
    Ticks->{Automatic, Automatic}], TraditionalForm]], "Output",
  CellChangeTimes->{{3.895044984839156*^9, 3.89504502978258*^9}, 
-   3.8950454523631287`*^9, 3.895045487169302*^9, 3.895045727876772*^9},
+   3.8950454523631287`*^9, 3.895045487169302*^9, 3.895045727876772*^9, {
+   3.895058918924488*^9, 3.895058950696308*^9}},
  CellLabel->
-  "Out[301]=",ExpressionUUID->"0d993603-4182-4ef0-b40a-1e8afd06bfe3"]
+  "Out[349]=",ExpressionUUID->"d37311f3-85f3-4bb4-9956-9cf0aff8bfba"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5536,41 +4998,36 @@ Cell[156611, 3797, 246, 5, 30, "Output",ExpressionUUID->"af66b824-71b6-45e3-a6f8
 }, Open  ]],
 Cell[156872, 3805, 1357, 36, 73, "Input",ExpressionUUID->"7e657251-2425-4b03-a0d7-ec4eeeb797e2"],
 Cell[CellGroupData[{
-Cell[158254, 3845, 200, 4, 30, "Input",ExpressionUUID->"27b176a8-4924-4aae-a2e3-4f1f212a4d01"],
-Cell[158457, 3851, 21704, 469, 168, "Output",ExpressionUUID->"465ca964-5d61-4201-8483-02266c163772"],
-Cell[180164, 4322, 2481, 57, 248, "Output",ExpressionUUID->"88a33ca5-5b02-4423-8fe4-b1619a57dd78"]
+Cell[158254, 3845, 3291, 83, 226, "Input",ExpressionUUID->"f714aefd-9eb3-44c0-a1a4-c04f4049595e"],
+Cell[161548, 3930, 6483, 130, 268, "Output",ExpressionUUID->"d37311f3-85f3-4bb4-9956-9cf0aff8bfba"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[182682, 4384, 3291, 83, 226, "Input",ExpressionUUID->"f714aefd-9eb3-44c0-a1a4-c04f4049595e"],
-Cell[185976, 4469, 6432, 129, 245, "Output",ExpressionUUID->"0d993603-4182-4ef0-b40a-1e8afd06bfe3"]
+Cell[168068, 4065, 336, 7, 30, "Input",ExpressionUUID->"c7470ffb-1b90-432a-b92c-b3934989c644"],
+Cell[168407, 4074, 201, 4, 30, "Output",ExpressionUUID->"572da1ed-e0a3-4f95-a235-1cf807f0aaa9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[192445, 4603, 336, 7, 30, "Input",ExpressionUUID->"c7470ffb-1b90-432a-b92c-b3934989c644"],
-Cell[192784, 4612, 201, 4, 30, "Output",ExpressionUUID->"572da1ed-e0a3-4f95-a235-1cf807f0aaa9"]
+Cell[168645, 4083, 3140, 81, 226, "Input",ExpressionUUID->"814390e0-a0fd-404f-b632-2b669069d2c7"],
+Cell[171788, 4166, 10066, 189, 245, "Output",ExpressionUUID->"fad450b9-0ba1-4066-aa86-fc541ab118af"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[193022, 4621, 3140, 81, 226, "Input",ExpressionUUID->"814390e0-a0fd-404f-b632-2b669069d2c7"],
-Cell[196165, 4704, 10066, 189, 245, "Output",ExpressionUUID->"fad450b9-0ba1-4066-aa86-fc541ab118af"]
+Cell[181891, 4360, 3192, 82, 226, "Input",ExpressionUUID->"101a1ff4-7f48-44af-88a5-9d94f84e5686"],
+Cell[185086, 4444, 9532, 179, 250, "Output",ExpressionUUID->"495e96a9-c3e8-4416-a81a-5246f5c59f12"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[206268, 4898, 3192, 82, 226, "Input",ExpressionUUID->"101a1ff4-7f48-44af-88a5-9d94f84e5686"],
-Cell[209463, 4982, 9532, 179, 273, "Output",ExpressionUUID->"495e96a9-c3e8-4416-a81a-5246f5c59f12"]
+Cell[194655, 4628, 342, 8, 30, "Input",ExpressionUUID->"10452553-b3e1-4229-a49a-451085609bc5"],
+Cell[195000, 4638, 2261, 62, 105, "Output",ExpressionUUID->"88a46711-1a2e-4633-9da4-ab2e6259151c"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[219032, 5166, 342, 8, 30, "Input",ExpressionUUID->"10452553-b3e1-4229-a49a-451085609bc5"],
-Cell[219377, 5176, 2261, 62, 105, "Output",ExpressionUUID->"88a46711-1a2e-4633-9da4-ab2e6259151c"]
+Cell[197298, 4705, 1090, 26, 115, "Input",ExpressionUUID->"58efbddc-3cca-46c2-b028-ae9a19e734dc"],
+Cell[198391, 4733, 808, 14, 99, "Output",ExpressionUUID->"18fcccf1-4218-45fd-b988-7e23e05bd9e0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[221675, 5243, 1090, 26, 115, "Input",ExpressionUUID->"58efbddc-3cca-46c2-b028-ae9a19e734dc"],
-Cell[222768, 5271, 808, 14, 99, "Output",ExpressionUUID->"18fcccf1-4218-45fd-b988-7e23e05bd9e0"]
+Cell[199236, 4752, 1091, 26, 115, "Input",ExpressionUUID->"8338f591-2050-4fb3-a25f-553403f2f2ec"],
+Cell[200330, 4780, 692, 12, 99, "Output",ExpressionUUID->"b7152f55-b999-42bd-b629-d3f95550fe67"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[223613, 5290, 1091, 26, 115, "Input",ExpressionUUID->"8338f591-2050-4fb3-a25f-553403f2f2ec"],
-Cell[224707, 5318, 692, 12, 99, "Output",ExpressionUUID->"b7152f55-b999-42bd-b629-d3f95550fe67"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[225436, 5335, 598, 14, 52, "Input",ExpressionUUID->"64b6d888-4941-4d48-9c4e-3cfd1308b4cd"],
-Cell[226037, 5351, 371, 8, 45, "Output",ExpressionUUID->"bec34b85-33ad-4a43-8fd2-43f8306ca720"]
+Cell[201059, 4797, 598, 14, 52, "Input",ExpressionUUID->"64b6d888-4941-4d48-9c4e-3cfd1308b4cd"],
+Cell[201660, 4813, 371, 8, 45, "Output",ExpressionUUID->"bec34b85-33ad-4a43-8fd2-43f8306ca720"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
