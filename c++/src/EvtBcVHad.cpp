@@ -586,7 +586,6 @@ void EvtBcVHad::decay_chiC2(EvtParticle *root_particle) {
     EvtParticle* chiC2 = root_particle->getDaug(0);
     EvtVector4C hardCur = hardCurr(root_particle);
 
-    
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
       p4meson = chiC2->getP4(), // J/psi momenta
@@ -616,6 +615,49 @@ void EvtBcVHad::decay_chiC2(EvtParticle *root_particle) {
         vertex(i, amp);
     }
 }
+
+
+void EvtBcVHad::decay_chiC2_mn(EvtParticle *root_particle) {
+    EvtParticle* chiC2 = root_particle->getDaug(0);
+    EvtVector4C hardCur;
+
+    EvtVector4R
+      p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
+      p4meson = chiC2->getP4(), // J/psi momenta
+      Q = p4b - p4meson, 
+      p4Sum = p4meson + p4b;
+    double Q2 = Q.mass2();
+
+    // Calculate Bc -> V W form-factors
+    double tV,  tA1, tA2, tA3;
+
+    double m_meson = chiC2->mass();
+    double m_b = root_particle->mass();
+    double mVar = m_b + m_meson;
+
+    ffmodel->gettensorff(root_particle->getId(),  chiC2->getId(), 
+      Q2, m_meson, &tV, &tA1, &tA2, &tA3);
+
+
+    // Calculate Bc -> V W current
+    EvtTensor4C ep1p2 = dual(EvtGenFunctions::directProd(p4b, p4meson));
+    EvtDiracSpinor spL, spN;
+    for(int iL=0; iL<2; ++iL) {
+      spL = root_particle->getDaug(iLepton[0])->spParent(iL);
+        spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
+        hardCur = EvtLeptonVCurrent(spL, spN);
+        EvtTensor4C Hh = EvtComplex(0, 2*tV/mVar/m_b)*EvtGenFunctions::directProd(ep1p2.cont1(hardCur), p4b);
+        Hh += EvtGenFunctions::directProd(mVar*tA1/m_b*p4b, hardCur);
+        Hh += EvtGenFunctions::directProd(p4b, p4b)*(tA2*p4b*hardCur+tA3*p4meson*hardCur)*pow(m_b,-2);
+        for (int i = 0; i < 5; i++) {
+            EvtTensor4C eps = chiC2->epsTensorParent(i).conj(); // chi_c2 polarization tensor
+            EvtComplex amp = cont11(Hh,eps).trace();
+            vertex(i, iL, amp);
+      }
+    }
+}
+
+
 //======================================================
 void EvtBcVHad::decay(EvtParticle *root_particle) {
 
@@ -628,6 +670,9 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     }
     else if(out_code==12 && idVector == EvtPDL::getId("chi_c1").getId()) {
       decay_chiC1_mn(root_particle);
+    }
+    else if(out_code==12 && idVector == EvtPDL::getId("chi_c2").getId()) {
+      decay_chiC2_mn(root_particle);
     }
     else if(out_code > 0 && (
       idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("psi(2S)").getId()

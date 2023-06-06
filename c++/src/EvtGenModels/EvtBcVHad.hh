@@ -55,6 +55,7 @@ protected:
     void decay_Psi_mn(EvtParticle *p);
     void decay_chiC0_mn(EvtParticle *p);
     void decay_chiC1_mn(EvtParticle *p);
+    void decay_chiC2_mn(EvtParticle *p);
 
 private:
     // whichfit --- code of the Bc -> VW formfactor set:
