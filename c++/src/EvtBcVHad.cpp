@@ -395,14 +395,15 @@ EvtVector4C EvtBcVHad::hardCurr(EvtParticle *root_particle) const {
     return hardCur;
 }
 
+/****
+ * psi decay functions
+*/
 
 
 
-void EvtBcVHad::decay_Psi(EvtParticle *root_particle) {
+EvtComplex EvtBcVHad::amp_psi(EvtParticle * root_particle, EvtVector4C hadCur, int iPol)
+{
     EvtParticle* Jpsi = root_particle->getDaug(0);
-    EvtVector4C hardCur = hardCurr(root_particle);
-
-    
     EvtVector4R
       p4b(root_particle->mass(), 0., 0., 0.), // Bc momentum
       p4meson = Jpsi->getP4(), // J/psi momenta
@@ -428,18 +429,38 @@ void EvtBcVHad::decay_Psi(EvtParticle *root_particle) {
     H.addDirProd((-a2f/mVar)*p4b, p4Sum);
     H += EvtComplex(0.0, vf/mVar)*dual(EvtGenFunctions::directProd(p4Sum, Q));
     H.addDirProd((a0f - a3f)*2.0*(m_meson/Q2)*p4b, Q);
-    EvtVector4C Heps = H.cont2(hardCur);
+    EvtVector4C Heps = H.cont2(hadCur);
+    EvtVector4C eps = Jpsi->epsParent(iPol).conj(); // psi-meson polarization vector
+    return eps*Heps;
+}
 
+
+void EvtBcVHad::decay_Psi(EvtParticle *root_particle) {
+    EvtVector4C hadCur = hardCurr(root_particle);
     for (int i = 0; i < 4; i++) {
-        EvtVector4C eps = Jpsi->epsParent(i).conj(); // psi-meson polarization vector
-        EvtComplex amp = eps*Heps;
+      EvtComplex amp = amp_psi(root_particle, hadCur, i);
         vertex(i, amp);
     }
 }
 
+void EvtBcVHad::decay_Psi_mn(EvtParticle *root_particle)
+{
+    EvtVector4C hadCur;
+    EvtDiracSpinor spL, spN;
+    for(int iL=0; iL<2; ++iL) {
+      spL = root_particle->getDaug(iLepton[0])->spParent(iL);
+      spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
+      hadCur = EvtLeptonVCurrent(spL, spN);
+      for(int iChi=0; iChi<3; ++iChi) {
+        EvtComplex amp = amp_psi(root_particle, hadCur, iChi);
+        vertex(iChi, iL, amp);
+      }
+    }
+
+}
 /****
  * chi_c0 decay functions
-*/
+ */
 EvtComplex EvtBcVHad::amp_chiC0(EvtParticle *root_particle, EvtVector4C hadCur) {
     EvtParticle* chiC0 = root_particle->getDaug(0);
     EvtVector4R
@@ -532,6 +553,9 @@ void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
     }
 }
 
+/****
+ * chi_c2 decay functions
+*/
 EvtComplex EvtBcVHad::amp_chiC2(EvtParticle *root_particle, EvtVector4C hadCur, int iPol)
 {
       EvtParticle* chiC2 = root_particle->getDaug(0);
@@ -594,8 +618,10 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     root_particle->initializePhaseSpace(getNDaug(), getDaugs());
 
     // Calculate hadronic current
-
-    if(out_code==12 && idVector == EvtPDL::getId("chi_c0").getId()) {
+    if(out_code==12 && (idVector == EvtPDL::getId("J/psi").getId() || EvtPDL::getId("psi(2S)").getId())) {
+      decay_Psi_mn(root_particle);
+    }
+    else if(out_code==12 && idVector == EvtPDL::getId("chi_c0").getId()) {
       decay_chiC0_mn(root_particle);
     }
     else if(out_code==12 && idVector == EvtPDL::getId("chi_c1").getId()) {

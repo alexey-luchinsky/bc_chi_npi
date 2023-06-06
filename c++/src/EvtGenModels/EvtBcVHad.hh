@@ -47,6 +47,8 @@ protected:
     // Hadronic current function
     EvtVector4C hardCurr(EvtParticle *root_particle) const;
     void parseDecay(void);
+
+    EvtComplex amp_psi(EvtParticle *root_particle, EvtVector4C hadCur, int iPol);
     void decay_Psi(EvtParticle *p);
     void decay_Psi_mn(EvtParticle *p);
 
