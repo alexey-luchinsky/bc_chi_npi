@@ -119,12 +119,12 @@ void EvtBCVFF2::getscalarff(EvtId, EvtId, double q2,
 
 
 
-void EvtBCVFF2::gettensorff(EvtId, EvtId, double, double, double*, 
-			       double*, double*, double*){
-  
-//   report(ERROR,"EvtGen") << "Not implemented :getbaryonff in EvtBCVFF2.\n";  
-  ::abort();
-
+void EvtBCVFF2::gettensorff(EvtId, EvtId, double q2, double, 
+	double* tV,  double* tA1, double* tA2, double* tA3) {
+	*tV=-0.7593279619789294 - 0.14373638874539618*q2 + 0.015428531108854306*pow(q2,2) - 0.0037404399820982963*pow(q2,3);
+	*tA1=-0.5845892322932432 - 0.05829150603138564*q2 + 0.0003828588805250468*pow(q2,2) - 0.0007578111067025861*pow(q2,3);
+	*tA2=0.0939174867271461 - 0.029819354099933058*q2 + 0.01373975840177015*pow(q2,2) - 0.0019524446633583286*pow(q2,3);
+	*tA3=-0.0020369655557486233 + 0.0033852618872049524*q2 - 0.0008299552762151167*pow(q2,2) + 0.00006460810519319177*pow(q2,3);  
 }
 
 

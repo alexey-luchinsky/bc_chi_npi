@@ -53,8 +53,8 @@ public:
   void getscalarff(EvtId, EvtId, double, double, double*, 
 		   double*);
 
-  void gettensorff(EvtId, EvtId, double, double, double*, 
-		   double*, double*, double*);
+  void gettensorff(EvtId, EvtId, double q2, double mass, 
+    double* tV,  double* tA1, double* tA2, double* tA3);
 
   void getbaryonff(EvtId, EvtId, double, double, double*, 
 		   double*, double*, double*);
