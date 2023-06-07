@@ -15,6 +15,7 @@
 //    A V Luchinsky     Jan 29, 2013        Module created
 //    A V Luchinsky     Apr 30, 2019        psi K_S K mode added
 //.   A V Luchinsky.    Nov 4, 2021         K+4pi, KK+3pi, 7pi modes added
+//    A V Luchinsky     Jun 2023            chi_cJ modes added
 //
 //------------------------------------------------------------------------
 

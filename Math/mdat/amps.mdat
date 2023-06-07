@@ -1,0 +1,31 @@
+amplitude["chi_c0", "A"] = fMinus[q2]*FV[p1 - p2, mu] + fPlus[q2]*FV[p1 + p2, mu]
+ 
+amplitude["chi_c0", "V"] = 0
+ 
+amplitude["chi_c1", "A"] = ((2*I)*Eps[LorentzIndex[mu], LorentzIndex[a], Momentum[p1], Momentum[p2]]*hA[q2])/(MBc + Mcc)
+ 
+amplitude["chi_c1", "V"] = (FV[q, a]*(FV[p1, mu]*hV2[q2] + FV[p2, mu]*hV3[q2]))/MBc + (MBc + Mcc)*hV1[q2]*MT[a, mu]
+ 
+amplitude["chi_c2", "A"] = ((MBc + Mcc)*FV[p1, a]*MT[b, mu]*tA1[q2])/MBc + (FV[p1, a]*FV[p1, b]*(FV[p1, mu]*tA2[q2] + FV[p2, mu]*tA3[q2]))/MBc^2
+ 
+amplitude["chi_c2", "V"] = ((2*I)*Eps[LorentzIndex[mu], LorentzIndex[a], Momentum[p1], Momentum[p2]]*FV[p1, b]*tV[q2])/(MBc*(MBc + Mcc))
+ 
+amplitude[out_, "V+A"] := amplitude[out, "V"] + amplitude[out, "A"]
+gamma["chi_c0", "P"] = (a1^2*beta*fP^2*GF^2*Vbc^2*Vuq^2*(q2*fMinus[q2] + (MBc^2 - Mcc^2)*fPlus[q2])^2)/(32*MBc*Pi)
+ 
+gamma["chi_c0", "V"] = (a1^2*beta*fV^2*GF^2*mV^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*Vbc^2*Vuq^2*fPlus[q2]^2)/(32*MBc*Pi*q2)
+ 
+gamma["chi_c0", "W"] = (a1^2*beta*GF^2*Vbc^2*Vuq^2*(q2^2*fMinus[q2]^2*rhoL[q2] + 2*(MBc^2 - Mcc^2)*q2*fMinus[q2]*fPlus[q2]*rhoL[q2] + fPlus[q2]^2*((MBc^2 - Mcc^2)^2*rhoL[q2] + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*rhoT[q2])))/(32*MBc*Pi)
+ 
+gamma["chi_c1", "P"] = (a1^2*beta*fP^2*GF^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*Vbc^2*Vuq^2*(2*MBc*(MBc + Mcc)*hV1[q2] + (MBc^2 - Mcc^2 + q2)*hV2[q2] + (MBc^2 - Mcc^2 - q2)*hV3[q2])^2)/(512*MBc^3*Mcc^2*Pi)
+ 
+gamma["chi_c1", "V"] = (a1^2*beta*fV^2*GF^2*mV^2*Vbc^2*Vuq^2*(32*MBc^2*Mcc^2*q2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*hA[q2]^2 + (MBc + Mcc)^2*(4*MBc^2*(MBc + Mcc)^2*(MBc^4 + Mcc^4 + 10*Mcc^2*q2 + q2^2 - 2*MBc^2*(Mcc^2 + q2))*hV1[q2]^2 + 4*MBc*(MBc + Mcc)*(MBc^6 - 3*MBc^4*(Mcc^2 + q2) - (Mcc^2 - q2)^2*(Mcc^2 + q2) + MBc^2*(3*Mcc^4 + 2*Mcc^2*q2 + 3*q2^2))*hV1[q2]*(hV2[q2] + hV3[q2]) + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))^2*(hV2[q2] + hV3[q2])^2)))/(512*MBc^3*Mcc^2*(MBc + Mcc)^2*Pi*q2)
+ 
+gamma["chi_c1", "W"] = (a1^2*beta*GF^2*Vbc^2*Vuq^2*(4*MBc^2*(MBc + Mcc)^4*hV1[q2]^2*((MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*rhoL[q2] + (MBc^4 + Mcc^4 + 10*Mcc^2*q2 + q2^2 - 2*MBc^2*(Mcc^2 + q2))*rhoT[q2]) + 4*MBc*(MBc + Mcc)^3*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*hV1[q2]*((MBc^2 - Mcc^2 - q2)*hV3[q2]*(rhoL[q2] + rhoT[q2]) + hV2[q2]*((MBc^2 - Mcc^2 + q2)*rhoL[q2] + (MBc^2 - Mcc^2 - q2)*rhoT[q2])) + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*(MBc^6*hV3[q2]^2*rhoL[q2] + 2*MBc^5*Mcc*hV3[q2]^2*rhoL[q2] - MBc^4*Mcc^2*hV3[q2]^2*rhoL[q2] - 4*MBc^3*Mcc^3*hV3[q2]^2*rhoL[q2] - MBc^2*Mcc^4*hV3[q2]^2*rhoL[q2] + 2*MBc*Mcc^5*hV3[q2]^2*rhoL[q2] + Mcc^6*hV3[q2]^2*rhoL[q2] - 2*MBc^4*q2*hV3[q2]^2*rhoL[q2] - 4*MBc^3*Mcc*q2*hV3[q2]^2*rhoL[q2] + 4*MBc*Mcc^3*q2*hV3[q2]^2*rhoL[q2] + 2*Mcc^4*q2*hV3[q2]^2*rhoL[q2] + MBc^2*q2^2*hV3[q2]^2*rhoL[q2] + 2*MBc*Mcc*q2^2*hV3[q2]^2*rhoL[q2] + Mcc^2*q2^2*hV3[q2]^2*rhoL[q2] + 32*MBc^2*Mcc^2*q2*hA[q2]^2*rhoT[q2] + MBc^6*hV3[q2]^2*rhoT[q2] + 2*MBc^5*Mcc*hV3[q2]^2*rhoT[q2] - MBc^4*Mcc^2*hV3[q2]^2*rhoT[q2] - 4*MBc^3*Mcc^3*hV3[q2]^2*rhoT[q2] - MBc^2*Mcc^4*hV3[q2]^2*rhoT[q2] + 2*MBc*Mcc^5*hV3[q2]^2*rhoT[q2] + Mcc^6*hV3[q2]^2*rhoT[q2] - 2*MBc^4*q2*hV3[q2]^2*rhoT[q2] - 4*MBc^3*Mcc*q2*hV3[q2]^2*rhoT[q2] - 4*MBc^2*Mcc^2*q2*hV3[q2]^2*rhoT[q2] - 4*MBc*Mcc^3*q2*hV3[q2]^2*rhoT[q2] - 2*Mcc^4*q2*hV3[q2]^2*rhoT[q2] + MBc^2*q2^2*hV3[q2]^2*rhoT[q2] + 2*MBc*Mcc*q2^2*hV3[q2]^2*rhoT[q2] + Mcc^2*q2^2*hV3[q2]^2*rhoT[q2] + (MBc + Mcc)^2*hV2[q2]^2*((MBc^2 - Mcc^2 + q2)^2*rhoL[q2] + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*rhoT[q2]) + 2*(MBc + Mcc)^2*hV2[q2]*hV3[q2]*((MBc^4 - 2*MBc^2*Mcc^2 + Mcc^4 - q2^2)*rhoL[q2] + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*rhoT[q2]))))/(512*MBc^3*Mcc^2*(MBc + Mcc)^2*Pi)
+ 
+gamma["chi_c2", "P"] = (a1^2*beta*fP^2*GF^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))^2*Vbc^2*Vuq^2*(2*MBc*(MBc + Mcc)*tA1[q2] + (MBc^2 - Mcc^2 + q2)*tA2[q2] + (MBc^2 - Mcc^2 - q2)*tA3[q2])^2)/(3072*MBc^5*Mcc^4*Pi)
+ 
+gamma["chi_c2", "V"] = (a1^2*beta*fV^2*GF^2*mV^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*Vbc^2*Vuq^2*(4*MBc^2*(MBc + Mcc)^4*(MBc^4 + Mcc^4 + 8*Mcc^2*q2 + q2^2 - 2*MBc^2*(Mcc^2 + q2))*tA1[q2]^2 + 4*MBc*(MBc + Mcc)^3*(MBc^6 - 3*MBc^4*(Mcc^2 + q2) - (Mcc^2 - q2)^2*(Mcc^2 + q2) + MBc^2*(3*Mcc^4 + 2*Mcc^2*q2 + 3*q2^2))*tA1[q2]*(tA2[q2] + tA3[q2]) + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*((MBc + Mcc)^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*tA2[q2]^2 + 2*(MBc + Mcc)^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*tA2[q2]*tA3[q2] + MBc^6*tA3[q2]^2 + 2*MBc^5*Mcc*tA3[q2]^2 - MBc^4*Mcc^2*tA3[q2]^2 - 4*MBc^3*Mcc^3*tA3[q2]^2 - MBc^2*Mcc^4*tA3[q2]^2 + 2*MBc*Mcc^5*tA3[q2]^2 + Mcc^6*tA3[q2]^2 - 2*MBc^4*q2*tA3[q2]^2 - 4*MBc^3*Mcc*q2*tA3[q2]^2 - 4*MBc^2*Mcc^2*q2*tA3[q2]^2 - 4*MBc*Mcc^3*q2*tA3[q2]^2 - 2*Mcc^4*q2*tA3[q2]^2 + MBc^2*q2^2*tA3[q2]^2 + 2*MBc*Mcc*q2^2*tA3[q2]^2 + Mcc^2*q2^2*tA3[q2]^2 + 24*MBc^2*Mcc^2*q2*tV[q2]^2)))/(3072*MBc^5*Mcc^4*(MBc + Mcc)^2*Pi*q2)
+ 
+gamma["chi_c2", "W"] = (a1^2*beta*GF^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*Vbc^2*Vuq^2*((MBc + Mcc)^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*rhoL[q2]*(2*MBc*(MBc + Mcc)*tA1[q2] + (MBc^2 - Mcc^2 + q2)*tA2[q2] + (MBc^2 - Mcc^2 - q2)*tA3[q2])^2 + rhoT[q2]*(4*MBc^2*(MBc + Mcc)^4*(MBc^4 + Mcc^4 + 8*Mcc^2*q2 + q2^2 - 2*MBc^2*(Mcc^2 + q2))*tA1[q2]^2 + 4*MBc*(MBc + Mcc)^3*(MBc^6 - 3*MBc^4*(Mcc^2 + q2) - (Mcc^2 - q2)^2*(Mcc^2 + q2) + MBc^2*(3*Mcc^4 + 2*Mcc^2*q2 + 3*q2^2))*tA1[q2]*(tA2[q2] + tA3[q2]) + (MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*((MBc + Mcc)^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*tA2[q2]^2 + 2*(MBc + Mcc)^2*(MBc^4 + (Mcc^2 - q2)^2 - 2*MBc^2*(Mcc^2 + q2))*tA2[q2]*tA3[q2] + MBc^6*tA3[q2]^2 + 2*MBc^5*Mcc*tA3[q2]^2 - MBc^4*Mcc^2*tA3[q2]^2 - 4*MBc^3*Mcc^3*tA3[q2]^2 - MBc^2*Mcc^4*tA3[q2]^2 + 2*MBc*Mcc^5*tA3[q2]^2 + Mcc^6*tA3[q2]^2 - 2*MBc^4*q2*tA3[q2]^2 - 4*MBc^3*Mcc*q2*tA3[q2]^2 - 4*MBc^2*Mcc^2*q2*tA3[q2]^2 - 4*MBc*Mcc^3*q2*tA3[q2]^2 - 2*Mcc^4*q2*tA3[q2]^2 + MBc^2*q2^2*tA3[q2]^2 + 2*MBc*Mcc*q2^2*tA3[q2]^2 + Mcc^2*q2^2*tA3[q2]^2 + 24*MBc^2*Mcc^2*q2*tV[q2]^2))))/(3072*MBc^5*Mcc^4*(MBc + Mcc)^2*Pi)
+ffList = {fPlus, fMinus, hV1, hV2, hV3, hA, tV, tA1, tA2, tA3}
