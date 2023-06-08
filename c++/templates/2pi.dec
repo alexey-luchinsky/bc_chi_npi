@@ -1,0 +1,30 @@
+# EventType: 
+# 
+# Descriptor: 
+# 
+# NickName:
+#
+# Cuts:
+#
+# Documentation:
+# EndDocumentation
+#
+# PhysicsWG: 
+# Tested: No
+# Responsible: Aleksei Luchinskii
+# Email: 
+# Date: 2021-09-09
+#
+#
+
+Alias Jpsi J/psi
+Alias psi2S psi(2S)
+
+
+Decay B_c+
+  1.000 OUT pi+ pi0 BC_VHAD FF;
+Enddecay
+#CDecay B_c-
+#
+End
+#
