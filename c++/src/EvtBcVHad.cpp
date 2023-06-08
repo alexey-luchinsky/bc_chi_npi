@@ -619,7 +619,7 @@ void EvtBcVHad::decay(EvtParticle *root_particle) {
     root_particle->initializePhaseSpace(getNDaug(), getDaugs());
 
     // Calculate hadronic current
-    if(out_code==12 && (idVector == EvtPDL::getId("J/psi").getId() || EvtPDL::getId("psi(2S)").getId())) {
+    if(out_code==12 && (idVector == EvtPDL::getId("J/psi").getId() || idVector == EvtPDL::getId("psi(2S)").getId())) {
       decay_Psi_mn(root_particle);
     }
     else if(out_code==12 && idVector == EvtPDL::getId("chi_c0").getId()) {
