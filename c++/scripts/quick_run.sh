@@ -43,6 +43,8 @@ sed "s/IN/${in}/ ; s/OUT/${out}/; s/FF/${ff}/" ../templates/${mode}.dec | tee tm
 ~/Work/rrF/c++/build/rrF.exe -v "[`cat ../templates/${mode}_vars.txt`]" -o out_${out_name}.root -s
 mkdir -p ${out_dir}
 mv m*.txt ${out_dir}
+mv e*.txt ${out_dir}
+mv prob.txt ${out_dir}
 
 
 exit

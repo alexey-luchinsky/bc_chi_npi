@@ -112,8 +112,14 @@ void EvtBCVFF2::getscalarff(EvtId, EvtId, double q2,
 	double, 
 	double* fPlus, double* fMinus)
 {
+	if(idVector == EvtPDL::getId("chi_c0").getId() && whichfit==1) {
 		*fPlus = 0.2735114574549966 + 0.02698177783795792*q2 + 0.0004438591230092838*pow(q2,2) + 0.00023394089715202517*pow(q2,3);
 		*fMinus = -0.7888608969785541 - 0.10052789894587946*q2 + 0.0028122053015600472*pow(q2,2) - 0.0015941397716725178*pow(q2,3);
+	}
+	else if(idVector == EvtPDL::getId("chi_c0").getId() && whichfit==2) {
+		*fPlus=-0.33991380592027914 - 0.040024442563952885*q2 + 0.0025230010943415723*pow(q2,2) - 0.0004656159966881966*pow(q2,3);
+		*fMinus=0.7701897692262628 + 0.0881680421897945*q2 - 0.00879204111309994*pow(q2,2) + 0.0010886713551476884*pow(q2,3);
+	}
 //   report(ERROR,"EvtGen") << "Not implemented :getbaryonff in EvtBCVFF2.\n";  
 }
 
