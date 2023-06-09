@@ -451,7 +451,7 @@ void EvtBcVHad::decay_Psi_mn(EvtParticle *root_particle)
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
       spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-      hadCur = EvtLeptonVCurrent(spL, spN);
+      hadCur = EvtLeptonVCurrent(spN, spL);
       for(int iChi=0; iChi<3; ++iChi) {
         EvtComplex amp = amp_psi(root_particle, hadCur, iChi);
         vertex(iChi, iL, amp);
@@ -494,7 +494,7 @@ void EvtBcVHad::decay_chiC0_mn(EvtParticle *root_particle) {
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
         spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-        hadCur = EvtLeptonVCurrent(spL, spN);
+        hadCur = EvtLeptonVCurrent(spN, spL);
         EvtComplex amp = amp_chiC0(root_particle , hadCur);
         vertex(iL, amp);
     }
@@ -546,7 +546,7 @@ void EvtBcVHad::decay_chiC1_mn(EvtParticle *root_particle) {
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
       spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-      hadCur = EvtLeptonVCurrent(spL, spN);
+      hadCur = EvtLeptonVCurrent(spN, spL);
       for(int iChi=0; iChi<3; ++iChi) {
         EvtComplex amp = amp_chiC1(root_particle, hadCur, iChi);
         vertex(iChi, iL, amp);
@@ -603,7 +603,7 @@ void EvtBcVHad::decay_chiC2_mn(EvtParticle *root_particle) {
     for(int iL=0; iL<2; ++iL) {
       spL = root_particle->getDaug(iLepton[0])->spParent(iL);
       spN = root_particle->getDaug(iNeutrino[0])->spParentNeutrino();
-      hadCur = EvtLeptonVCurrent(spL, spN);
+      hadCur = EvtLeptonVCurrent(spN, spL);
       for(int iChi=0; iChi<5; ++iChi) {
         EvtComplex amp = amp_chiC2(root_particle, hadCur, iChi);
         vertex(iChi, iL, amp);
