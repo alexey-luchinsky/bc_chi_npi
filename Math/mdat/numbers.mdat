@@ -1,0 +1,6 @@
+GeV = 1.; MeV = 10^-3 GeV;
+$MBc = 6274.47 MeV;
+getMcc[out_, type_ : "1P"] := 
+ Switch[out, "chi_c0", 3414.71 MeV, "chi_c1", 3510.67 MeV, "chi_c2", 
+  3556.17 MeV]
+q2Max[out_] := ($MBc - getMcc[out])^2;
