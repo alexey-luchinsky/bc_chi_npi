@@ -48,3 +48,15 @@ Clear[NormalizeHST];
 Options[NormalizeHST] = {Norm -> 1};
 NormalizeHST[hist_, OptionsPattern[]] := 
   OptionValue[Norm]*hist/IntegralHST[hist];
+
+Clear[SaveVar];
+Options[SaveVar] = {Overwrite -> True};
+SaveVar[fileName_, var_, OptionsPattern[]] := Module[{file},
+  If[OptionValue[Overwrite] === True,
+   file = OpenWrite[fileName];,
+   file = OpenAppend[fileName];
+   ];
+  WriteString[file, ToString[Definition[var], InputForm] <> "\n"];
+  Close[file];
+  ]
+
