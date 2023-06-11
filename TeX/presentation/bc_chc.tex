@@ -9,6 +9,8 @@
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\A}{\mathcal{A}}
 
+	
+\graphicspath{{figs/}}
 
 \begin{document}
 
@@ -34,7 +36,7 @@
   \frametitle{$B_c\to J/\psi+\R$}
   Diagram and amplitude factorise:
   \begin{center}
-    \includegraphics[width=0.5\columnwidth]{figs/diags_BcCCW}
+    \includegraphics[width=0.5\columnwidth]{diags_BcCCW}
   \end{center}
       $$\M\left(B_c \to J/\psi + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
    where
@@ -85,9 +87,9 @@ $$
 \begin{frame}
   \frametitle{$B_c\to \chi_{cJ}+\R$}
 \begin{center}
-  \includegraphics[width=0.5\columnwidth]{figs/diags_BcCCW}
+  \includegraphics[width=0.5\columnwidth]{diags_BcCCW}
 \end{center}
-$$\M\left(B_c \to chi_{cJ} + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
+$$\M\left(B_c \to \chi_{cJ} + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
 Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 \begin{itemize}
 \item Ebert
@@ -99,22 +101,34 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 
 \subsection{$\chi_{c0}$}
 \begin{frame}
-  \frametitle{$\chi_{c0}$}
+  \frametitle{$\chi_{c0}$, Form Factors}
   $$
   H_\mu = f_{+}\left(q^2\right) \left(p_1+p_2\right)_\mu + f_{-}\left(q^2\right) \left(p_1-p_2\right)_\mu 
   $$
+  \includegraphics[width=0.9\textwidth]{figs/ff_chi_c0}
+
+  $f_{-}(q^2)$ gives no contribution to most of the decays
   
+  $f_{+}(q^2)$ are proportional to each other
 \end{frame}
 
 
 \subsection{$\chi_{c1}$}
 \begin{frame}
-  \frametitle{$\chi_{c1}$}
+  \frametitle{$\chi_{c1}$, Form Factors}
+  \begin{align*}
+    \label{eq:1}
+    H_\mu =& \frac{2i h_A(q^2)}{M_1+M_2}e_{\mu\nu\rho\sigma}\epsilon^\nu p_1^\rho p_2^\sigma
+             + (M_1+M_2) h_{V_1}(q^2)\epsilon_\mu + \\
+     & [h_{V_2}(q^2)p_{1\mu} + h_{V_3}(q^2)p_{2\mu}]\frac{\epsilon q}{M_1}
+  \end{align*}
+  \includegraphics[width=0.9\textwidth]{figs/ff_chi_c1}
 \end{frame}
 
 \subsection{$\chi_{c2}$}
 \begin{frame}
-  \frametitle{$\chi_{c2}$}
+  \frametitle{$\chi_{c2}$, Form Factors}
+  \includegraphics[width=0.9\textwidth]{figs/ff_chi_c2}
 \end{frame}
 
 
