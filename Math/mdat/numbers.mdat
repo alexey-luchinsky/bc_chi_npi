@@ -1,6 +1,27 @@
 GeV = 1.; MeV = 10^-3 GeV;
+
+gammaTot = (6.6*10^-22 10^-3)/(0.5*10^-12);
+
 $MBc = 6274.47 MeV;
+$a1 = 1.14;
 getMcc[out_, type_ : "1P"] := 
  Switch[out, "chi_c0", 3414.71 MeV, "chi_c1", 3510.67 MeV, "chi_c2", 
   3556.17 MeV]
 q2Max[out_] := ($MBc - getMcc[out])^2;
+
+Clear[Ngamma];
+Ngamma[out_, outL_, fffit_] := Module[{
+   $Mcc = getMcc[out],
+   $q2 = Switch[outL, "P", mPi, "V", mV, "W", q2]
+   },
+  gamma[out, outL] //. {
+      beta -> 
+       Sqrt[1 - ((Mcc + Sqrt[q2])/MBc)^2] Sqrt[
+        1 - ((Mcc - Sqrt[q2])/MBc)^2],
+      GF -> 1.16*10^-5 GeV^-2, fP -> 130 MeV, fV -> 208 MeV,
+      Vuq -> 0.973, Vbc -> 40.8*10^-3, a1 -> $a1
+      } //. {MBc -> $MBc, mPi -> $mPi, mV -> 775 MeV, Mcc -> $Mcc, 
+     q2 -> $q2} /. fffit];
+
+Ngamma[out_, "enu", fffit_] := 
+ Ngamma[out, "W", fffit] /. {rhoL[_] -> 0, rhoT[_] -> 1/(6 \[Pi]^2)}
