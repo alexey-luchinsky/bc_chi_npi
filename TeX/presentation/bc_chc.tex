@@ -114,31 +114,64 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 
 \newcommand{\Br}{\mathrm{Br}}
 
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c0} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c0_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c0_P_Wang.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 \begin{frame}[t]
   \frametitle{$B_c \to \chi_{c0} e \nu$}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
-      \begin{tabular}{lcr}
-      [Paper] &:& $\Br  = 0.087\%$ \\
-      this      &:& $\Br  = 0.087\%$ \\        
-      \end{tabular}
+      \input{tables/chi_c0_enu_Ebert.tex}
       \vspace{0.5cm}
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
-        \begin{tabular}{lcr}
-          [Paper] &:& $\Br  = 0.13\%$ \\
-          this      &:& $\Br  = 0.13\%$ \\        
-        \end{tabular}
+        \input{tables/chi_c0_enu_Wang.tex}
         \vspace{0.5cm}
       }
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_e2_Wang}}}
       \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Wang}}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c0} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c0} \rho\right] =
+  16\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c0}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c0_enu_rho_Ebert}}
+      \input{tables/chi_c0_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c0_enu_rho_Wang}}
+      % Bc -> chi_c0 + V with [Wang]
+      \input{tables/chi_c0_V_Wang.tex}
+       \end{column}
+\end{columns}
 \end{frame}
 
 \subsection{$\chi_{c1}$}
@@ -153,32 +186,65 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \includegraphics[width=0.9\textwidth]{figs/ff_chi_c1}
 \end{frame}
 
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c1} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c1_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c1_P_Wang.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}[t]
   \frametitle{$B_c \to \chi_{c1} e \nu$}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
-      \begin{tabular}{lcr}
-      [Paper] &:& $\Br  = 0.082\%$ \\
-      this      &:& $\Br  = 0.082\%$ \\        
-      \end{tabular}
-      \vspace{0.5cm}
+      \input{tables/chi_c1_enu_Ebert.tex}
+            \vspace{0.5cm}
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
-        \begin{tabular}{lcr}
-          [Paper] &:& $\Br  = 0.11\%$ \\
-          this      &:& $\Br  = 0.11\%$ \\        
-        \end{tabular}
+      \input{tables/chi_c1_enu_Wang.tex}
         \vspace{0.5cm}
       }
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_e2_Wang}}}
       \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Wang}}
     \end{column}
   \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c1} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c1} \rho\right] =
+  16\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c1}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c1_enu_rho_Ebert}}
+      \input{tables/chi_c1_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c1_enu_rho_Wang}}
+      \input{tables/chi_c1_V_Wang.tex}
+    \end{column}
+\end{columns}
 \end{frame}
 
 
@@ -199,26 +265,34 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 \end{center}
 \end{frame}
 
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c2} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c2_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c2_P_Wang.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
 
 \begin{frame}[t]
   \frametitle{$B_c \to \chi_{c2} e \nu$}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
-      \begin{tabular}{lcr}
-      [Paper] &:& $\Br  = 0.16\%$ \\
-      this      &:& $\Br  = 0.16\%$ \\        
-      \end{tabular}
+      \input{tables/chi_c2_enu_Ebert.tex}
       \vspace{0.5cm}
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
-        \begin{tabular}{lcr}
-          [Paper] &:& $\Br  = 0.1\%$ \\
-          this      &:& $\Br  = 0.1\%$ \\        
-        \end{tabular}
+      \input{tables/chi_c2_enu_Wang.tex}
         \vspace{0.5cm}
       }
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_e2_Wang}}}
@@ -227,10 +301,42 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \end{columns}
 \end{frame}
 
-  
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c2} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c2} \rho\right] =
+  16\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c2}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c2_enu_rho_Ebert}}
+      \input{tables/chi_c2_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c2_enu_rho_Wang}}
+      \input{tables/chi_c2_V_Wang.tex}
+    \end{column}
+\end{columns}
+\end{frame}
+
+
 \section{$B_c\to \chi_{cJ}+n\pi$}
 \begin{frame}
   \frametitle{$B_c\to \chi_{cJ}+n\pi$}
+  $$
+  \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} = 16\pi^2 \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} \rho_T^{(n\pi)}(q^2)
+  $$
+  Brangings (in $10^{-5}$):
+  \input{tables/tabNPI.tex}
+  $q^2$ distributions are approximately the same for all $\chi_{cJ}$
+  \centering{\includegraphics[width=0.9\textwidth]{chi_c0_nPi_q2}}
 \end{frame}
 
 \section{EvtGen}
