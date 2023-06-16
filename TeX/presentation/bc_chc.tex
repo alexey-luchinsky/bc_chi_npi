@@ -4,11 +4,14 @@
 
 \title{$P$-Wave Charmonia Production in Exclusive $B_c$-Meson Decays}
 \author{Alexey Luchinsky}
+\institute{IHEP, Russia\\ BGSU, Bowling Green, OH, USA}
+
 
 \newcommand{\R}{\mathcal{R}}
 \newcommand{\M}{\mathcal{M}}
 \newcommand{\A}{\mathcal{A}}
-
+	
+\newcommand{\cc}{(\bar{c}c)}
 	
 \graphicspath{{figs/}}
 
@@ -18,22 +21,41 @@
   \maketitle
 \end{frame}
 
+\section{Introduction}
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{itemize}
+  \item $B_c^+ = (\bar{b}c)$ combines both charmonia and bottomonia properties
+  \item Can be used to
+    \begin{itemize}
+    \item study QCD in confinment and assymtotoc freedom regimes
+    \item check existing models for heavy quarkonia description      
+    \end{itemize}
+  \item $B_c \to \cc+\R$ decays can be studied using the factorization model
+  \item Good results for vector charmonia:
+    \begin{itemize}
+    \item $B_c \to \psi^{(')} + e\nu, \pi, \rho, 3\pi, \dots$
+    \end{itemize}
+  \item What about $P$-wave states
+    \begin{itemize}
+    \item $B_c \to \chi_{cJ} + e\nu, \pi, \rho, 3\pi, \dots$
+    \end{itemize}
+
+  \end{itemize}
+\end{frame}
+
+
 \begin{frame}
   \frametitle{Content}
   \tableofcontents
 \end{frame}
 
-\section{Introduction}
-\begin{frame}
-  \frametitle{Introduction}
-\end{frame}
 
-\section{$B_c\to J/\psi + \R$}
 
-\subsection{General Info}
+\section{$B_c\to \cc + \R$}
 
 \begin{frame}[t]
-  \frametitle{$B_c\to J/\psi+\R$}
+  \frametitle{Factorization}
   Diagram and amplitude factorise:
   \begin{center}
     \includegraphics[width=0.5\columnwidth]{diags_BcCCW}
@@ -55,23 +77,9 @@ $$
   \frametitle{$B_c \to J/\psi W$ transition}
 \end{frame}
 
-\begin{frame}
-  \frametitle{$W\to R$ polarization vector}
-\end{frame}
 
-\subsection{$B_c\to J/\psi e\nu$}
 \begin{frame}
-  \frametitle{$B_c\to J/\psi e\nu$}
-\end{frame}
-
-\subsection{$B_c\to J/\psi \pi$, $B_c\to J/\psi \rho$}
-\begin{frame}
-  \frametitle{$B_c\to J/\psi \pi$, $B_c\to J/\psi \rho$}
-\end{frame}
-
-\subsection{$B_c\to J/\psi + n\pi$}
-\begin{frame}
-  \frametitle{$B_c\to J/\psi+ 2\pi$}
+  \frametitle{$W \to  2\pi$}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       % diag grabbed from arXiv:1104.0808
@@ -85,7 +93,7 @@ $$
 
 
 \begin{frame}
-  \frametitle{$B_c\to J/\psi + 3\pi$}
+  \frametitle{$W \to   3\pi$}
   \begin{columns}
     \begin{column}{0.5\textwidth}
       % diag grabbed from arXiv:1104.0808
@@ -93,14 +101,16 @@ $$
     \end{column}
     \begin{column}{0.5\textwidth}
       \includegraphics[width=0.9\textwidth]{figs/rhoT_3pi_q2}
-      Agrees with CERN arXiv 1204.0079 [hep-ex]
+
+      {\tiny Agrees with CERN arXiv 1204.0079 [hep-ex]}
+      
       \includegraphics[width = 0.9\textwidth]{1204_0079_Fig2}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}
-  \frametitle{$B_c\to J/\psi +  5\pi$}
+  \frametitle{$W \to   5\pi$}
     \begin{columns}
     \begin{column}{0.5\textwidth}
       % diag grabbed from arXiv:1208.1398
@@ -108,7 +118,7 @@ $$
     \end{column}
     \begin{column}{0.5\textwidth}
       \includegraphics[width=0.9\textwidth]{figs/rhoT_5pi_q2}
-      Agrees with CERN [2208.08660 [hep-ex]]
+      {\tiny Agrees with CERN [2208.08660 [hep-ex]]}
       \includegraphics[width=0.9\textwidth]{figs/2208_08660_Fig4}      
     \end{column}
   \end{columns}
@@ -186,7 +196,7 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \frametitle{$B_c \to \chi_{c0} \rho$}
   $$
   \Br\left[B_c \to \chi_{c0} \rho\right] =
-  16\pi^2 f_\rho^2 \left.
+  6\pi^2 f_\rho^2 \left.
     \frac{d\Br\left(B_c\to\chi_{c0}+e\nu\right)}{dq^2}
   \right|_{q^2=m_\rho^2}
   $$
@@ -216,7 +226,7 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
              + (M_1+M_2) h_{V_1}(q^2)\epsilon_\mu + \\
      & [h_{V_2}(q^2)p_{1\mu} + h_{V_3}(q^2)p_{2\mu}]\frac{\epsilon q}{M_1}
   \end{align*}
-  \includegraphics[width=0.9\textwidth]{figs/ff_chi_c1}
+  \includegraphics[width=0.8\textwidth]{figs/ff_chi_c1}
 \end{frame}
 
 \begin{frame}
@@ -260,7 +270,7 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \frametitle{$B_c \to \chi_{c1} \rho$}
   $$
   \Br\left[B_c \to \chi_{c1} \rho\right] =
-  16\pi^2 f_\rho^2 \left.
+  6\pi^2 f_\rho^2 \left.
     \frac{d\Br\left(B_c\to\chi_{c1}+e\nu\right)}{dq^2}
   \right|_{q^2=m_\rho^2}
   $$
@@ -339,7 +349,7 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \frametitle{$B_c \to \chi_{c2} \rho$}
   $$
   \Br\left[B_c \to \chi_{c2} \rho\right] =
-  16\pi^2 f_\rho^2 \left.
+  6\pi^2 f_\rho^2 \left.
     \frac{d\Br\left(B_c\to\chi_{c2}+e\nu\right)}{dq^2}
   \right|_{q^2=m_\rho^2}
   $$
@@ -364,7 +374,7 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 \begin{frame}
   \frametitle{$B_c\to \chi_{cJ}+n\pi$}
   $$
-  \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} = 16\pi^2 \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} \rho_T^{(n\pi)}(q^2)
+  \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} = \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} \frac{\rho_T^{(n\pi)}(q^2)}{\rho_T^{(e\nu)}}
   $$
   Brangings (in $10^{-5}$):
   {\small
@@ -395,7 +405,7 @@ Enddecay
 \end{frame}
 
 
-\section{Conclusion}
+\section{Results and Conclusion}
 \begin{frame}
   \frametitle{Results' Summary}
   Original branchng fractions:
@@ -407,6 +417,26 @@ Enddecay
   Ratios
   {\tiny\input{tables/ratios_table.tex}}
   
+\end{frame}
+
+\begin{frame}
+  \frametitle{Conclusion}
+  \begin{itemize}
+  \item Considering $B_c \to \chi_{cJ}+\R$ decays
+  \item Factorization model, spectral function approach
+  \item Form-factor sets from
+    \begin{itemize}
+    \item Ebert
+    \item Wang
+    \end{itemize}
+  \item Resonable agreement with papers' results, with some exceptions
+    \begin{itemize}
+    \item [Ebert]: $B_c\to\chi_{c1}\pi$
+    \item [Ebert]: $B_c\to \chi_{cJ}\rho$ vs $B_c\to\chi_{cJ}e\nu$
+    \end{itemize}
+  \item New results for $R=2\pi, 3\pi, 5\pi$
+  \item New decays added to EvtGen model (BC\_VHAD)
+  \end{itemize}
 \end{frame}
 
 
