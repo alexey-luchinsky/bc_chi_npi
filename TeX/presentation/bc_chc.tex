@@ -72,14 +72,47 @@ $$
 \subsection{$B_c\to J/\psi + n\pi$}
 \begin{frame}
   \frametitle{$B_c\to J/\psi+ 2\pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1104.0808
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_2pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+  \includegraphics[width=0.9\textwidth]{figs/rhoT_2pi_q2}
+    \end{column}
+  \end{columns}
 \end{frame}
+
 
 \begin{frame}
   \frametitle{$B_c\to J/\psi + 3\pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1104.0808
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_3pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=0.9\textwidth]{figs/rhoT_3pi_q2}
+      Agrees with CERN arXiv 1204.0079 [hep-ex]
+      \includegraphics[width = 0.9\textwidth]{1204_0079_Fig2}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
   \frametitle{$B_c\to J/\psi +  5\pi$}
+    \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1208.1398
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_5pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \includegraphics[width=0.9\textwidth]{figs/rhoT_5pi_q2}
+      Agrees with CERN [2208.08660 [hep-ex]]
+      \includegraphics[width=0.9\textwidth]{figs/2208_08660_Fig4}      
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 
@@ -334,20 +367,46 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
   \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} = 16\pi^2 \frac{d\Gamma\left(B_c \to \chi_{cJ} + n\pi\right)}{dq^2} \rho_T^{(n\pi)}(q^2)
   $$
   Brangings (in $10^{-5}$):
-  \input{tables/tabNPI.tex}
+  {\small
+    \input{tables/tabNPI.tex}
+    }
   $q^2$ distributions are approximately the same for all $\chi_{cJ}$
   \centering{\includegraphics[width=0.9\textwidth]{chi_c0_nPi_q2}}
 \end{frame}
 
 \section{EvtGen}
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{EvtGen}
+  All described dacays modes are added to BC\_VHAD model
+  \begin{itemize}
+  \item   Typical decay file:
+    \begin{block}{}
+\begin{verbatim}
+Decay B_c+
+  1.000 chi_c0 pi+ pi+ pi+ pi- pi- BC_VHAD 1;
+Enddecay
+\end{verbatim}
+    \end{block}
+\item All usual for model out states: $e\nu$, $2\pi$, $3\pi$, $5\pi$, \dots 
+\item Particles' order is determined automatically 
+\end{itemize}
+
+
 \end{frame}
 
 
 \section{Conclusion}
 \begin{frame}
-  \frametitle{Conclusion}
+  \frametitle{Results' Summary}
+  Original branchng fractions:
+  {\tiny\input{tables/papers_table.tex}}
+  
+  Predicitons for branching fractions of the considered decays
+  {\tiny\input{tables/sum_table.tex}}
+
+  Ratios
+  {\tiny\input{tables/ratios_table.tex}}
+  
 \end{frame}
 
 
