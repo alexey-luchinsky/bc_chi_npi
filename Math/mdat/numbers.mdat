@@ -26,4 +26,4 @@ Ngamma[out_, outL_, fffit_] := Module[{
      q2 -> $q2} /. fffit];
 
 Ngamma[out_, "enu", fffit_] := 
- Ngamma[out, "W", fffit] /. {rhoL[_] -> 0, rhoT[_] -> 1/(6 \[Pi]^2)}
+ Ngamma[out, "W", fffit] /. {rhoL[_] -> 0, rhoT[_] -> 1/($a1^2*6*\[Pi]^2)}

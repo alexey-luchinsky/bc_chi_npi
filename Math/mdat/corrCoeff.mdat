@@ -1,11 +1,11 @@
-corrCoeff["chi_c0", "Ebert"] = 0.8679530487004834
+corrCoeff["chi_c0", "Ebert"] = 0.9894664755185513
  
-corrCoeff["chi_c0", "Wang"] = 0.8529014325807782 +- 0.09841170375932055
+corrCoeff["chi_c0", "Wang"] = 0.9723076331420873 +- 0.11218934228562545
  
-corrCoeff["chi_c1", "Ebert"] = 0.8763628102918907
+corrCoeff["chi_c1", "Ebert"] = 0.9990536037327553
  
-corrCoeff["chi_c1", "Wang"] = 0.8591986436848161 +- 0.11716345141156584
+corrCoeff["chi_c1", "Wang"] = 0.9794864538006901 +- 0.13356633460918504
  
-corrCoeff["chi_c2", "Ebert"] = 0.875958197532217
+corrCoeff["chi_c2", "Ebert"] = 0.9985923451867275
  
-corrCoeff["chi_c2", "Wang"] = 0.5139305482510336 +- 0.07708958223765505
+corrCoeff["chi_c2", "Wang"] = 0.5858808250061783 +- 0.08788212375092674
