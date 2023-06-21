@@ -1,0 +1,463 @@
+\documentclass{beamer}
+
+\usepackage{graphicx}
+
+\usepackage{epstopdf}
+
+% \usetheme{Rochester}
+\usecolortheme{focus}
+% % \usefonttheme{structuresmallcapsserif}
+% \usefonttheme{focus}
+
+\title{$P$-Wave Charmonia Production in Exclusive $B_c$-Meson Decays}
+\author{Alexey Luchinsky}
+\institute{IHEP, Russia\\ BGSU, Bowling Green, OH, USA}
+
+
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\A}{\mathcal{A}}
+	
+\newcommand{\cc}{(\bar{c}c)}
+	
+\graphicspath{{figs/}}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+
+\section{Introduction}
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{itemize}
+  \item $B_c^+ = (\bar{b}c)$ combines both charmonia and bottomonia properties
+  \item Can be used to
+    \begin{itemize}
+    \item study QCD in confinment and assymtotoc freedom regimes
+    \item check existing models for heavy quarkonia description      
+    \end{itemize}
+  \item $B_c \to \cc+\R$ decays can be studied using the factorization model
+  \item Good results for vector charmonia:
+    \begin{itemize}
+    \item $B_c \to \psi^{(')} + e\nu, \pi, \rho, 3\pi, \dots$
+    \end{itemize}
+  \item What about $P$-wave states
+    \begin{itemize}
+    \item $B_c \to \chi_{cJ} + e\nu, \pi, \rho, 3\pi, \dots$
+    \end{itemize}
+
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Content}
+  \tableofcontents
+\end{frame}
+
+
+\begin{frame}[t]
+  \frametitle{Factorization}
+  Diagram and amplitude factorise:
+  \begin{center}
+    \includegraphics[width=0.4\columnwidth]{diags_BcCCW}
+  \end{center}
+      $$\M\left(B_c \to \cc + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
+   where
+   \begin{itemize}
+   \item $H^\mu$ is the $B_c\to \cc W$ transition vertex
+     \begin{itemize}
+     \item Potential model, QCD sum rules, etc
+     \end{itemize}
+   \item $\epsilon^{(\R)}_\mu$ is effective  $W\to\R$ polarization vector
+     \begin{itemize}
+     \item ChPt, phonomenologr, resonance approximation, etc
+     \end{itemize}
+   \end{itemize}
+The differential width is
+$$
+\frac{d\Gamma}{dq^2} \sim \frac{d\Gamma_T}{dq^2} \rho_T\left(q^2\right) + \frac{d\Gamma_L}{dq^2} \rho_L\left(q^2\right)
+$$
+\end{frame}
+
+\section{$B_c\to \chi_{cJ}+e\nu, \pi, \rho$}
+\begin{frame}
+  \frametitle{$B_c\to \chi_{cJ}+\R$}
+\begin{center}
+  \includegraphics[width=0.5\columnwidth]{diags_BcCCW}
+\end{center}
+$$\M\left(B_c \to \chi_{cJ} + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
+Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
+\begin{itemize}
+\item D. Ebert, R. N. Faustov, V. O. Galkin, PRD 82 (2010) 034019 
+\item Zhi-hui Wang et al,  	J. Phys. G,  39 (2012) 015009
+\item E. Hernandez et al, PRD      74 (2006) 074008
+\item etc.
+\end{itemize}
+I will use these form factors, compare published branching fractions and consider some other decay modes
+\end{frame}
+
+\subsection{$\chi_{c0}$}
+\begin{frame}
+  \frametitle{$\chi_{c0}$, Form Factors}
+  $$
+  H_\mu = f_{+}\left(q^2\right) \left(p_1+p_2\right)_\mu + f_{-}\left(q^2\right) \left(p_1-p_2\right)_\mu 
+  $$
+  \includegraphics[width=0.9\textwidth]{figs/ff_chi_c0}
+
+  $f_{-}(q^2)$ gives no contribution to most of the decays
+  
+  $f_{+}(q^2)$ are proportional to each other
+\end{frame}
+
+\newcommand{\Br}{\mathrm{Br}}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c0} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c0_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c0_P_Wang.tex}
+    \end{column}
+  \end{columns}
+  \vspace{2cm}
+  Good agreement
+\end{frame}
+
+\newcommand{\VSpace}{}
+
+\begin{frame}[t]
+  \frametitle{$B_c \to \chi_{c0} e \nu$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]}
+      \input{tables/chi_c0_enu_Ebert.tex}
+      \VSpace 
+      \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Ebert}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \only<3->{
+        \centering{[Wang]}
+        \input{tables/chi_c0_enu_Wang.tex}
+      }
+      \VSpace 
+      \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_e2_Wang}}}
+      \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Wang}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c0} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c0} \rho\right] =
+  6\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c0}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c0_enu_rho_Ebert}}
+      \input{tables/chi_c0_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c0_enu_rho_Wang}}
+      % Bc -> chi_c0 + V with [Wang]
+      \input{tables/chi_c0_V_Wang.tex}
+       \end{column}
+\end{columns}
+\end{frame}
+
+\subsection{$\chi_{c1}$}
+\begin{frame}
+  \frametitle{$\chi_{c1}$, Form Factors}
+  \begin{align*}
+    H_\mu =& \frac{2i h_A(q^2)}{M_1+M_2}e_{\mu\nu\rho\sigma}\epsilon^\nu p_1^\rho p_2^\sigma
+             + (M_1+M_2) h_{V_1}(q^2)\epsilon_\mu + \\
+     & [h_{V_2}(q^2)p_{1\mu} + h_{V_3}(q^2)p_{2\mu}]\frac{\epsilon q}{M_1}
+  \end{align*}
+  \includegraphics[width=0.8\textwidth]{figs/ff_chi_c1}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c1} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c1_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c1_P_Wang.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[t]
+  \frametitle{$B_c \to \chi_{c1} e \nu$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]}
+      \input{tables/chi_c1_enu_Ebert.tex}
+      \VSpace 
+      \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Ebert}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \only<3->{
+        \centering{[Wang]}
+      \input{tables/chi_c1_enu_Wang.tex}
+      }
+      \VSpace 
+      \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_e2_Wang}}}
+      \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Wang}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c1} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c1} \rho\right] =
+  6\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c1}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c1_enu_rho_Ebert}}
+      \input{tables/chi_c1_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c1_enu_rho_Wang}}
+      \input{tables/chi_c1_V_Wang.tex}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\subsection{$\chi_{c2}$}
+\begin{frame}
+  \frametitle{$\chi_{c2}$, Form Factors}
+  \begin{align*}
+  H_\mu &=
+\frac{2it_V(q^2)}{M_1+M_2} \epsilon^{\mu\nu\rho\sigma}\epsilon^*_{\nu\alpha}
+          \frac{p_1^\alpha}{M_1}  p_1 p_1  
+     +  (M_1+M_2)t_{A_1}(q^2)\epsilon^{*\mu\alpha}\frac{p_{1\alpha}}{M_1} +\\
+&  [t_{A_2}(q^2)p_1^\mu+t_{A_3}(q^2)p_2^\mu]\epsilon^*_{\alpha\beta}
+\frac{p_1^\alpha p_1^\beta}{M_1^2} , 
+  \end{align*}
+
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{figs/ff_chi_c2}
+\end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c2} \pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]:}
+      \input{tables/chi_c2_P_Ebert.tex}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering{[Wang]:}
+      \input{tables/chi_c2_P_Wang.tex}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}[t]
+  \frametitle{$B_c \to \chi_{c2} e \nu$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{[Ebert]}
+      \input{tables/chi_c2_enu_Ebert.tex}
+      \VSpace 
+      \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_q2_Ebert}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \only<3->{
+        \centering{[Wang]}
+      \input{tables/chi_c2_enu_Wang.tex}
+      }
+      \VSpace 
+      \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_e2_Wang}}}
+      \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_q2_Wang}}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{c2} \rho$}
+  $$
+  \Br\left[B_c \to \chi_{c2} \rho\right] =
+  6\pi^2 f_\rho^2 \left.
+    \frac{d\Br\left(B_c\to\chi_{c2}+e\nu\right)}{dq^2}
+  \right|_{q^2=m_\rho^2}
+  $$
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering{Ebert}
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c2_enu_rho_Ebert}}
+      \input{tables/chi_c2_V_Ebert.tex}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+      \centering{Wang}\\
+      \vspace{3mm}
+      \centering{\includegraphics[width=0.9\textwidth]{chi_c2_enu_rho_Wang}}
+      \input{tables/chi_c2_V_Wang.tex}
+    \end{column}
+\end{columns}
+\end{frame}
+
+\subsection{Results}
+\begin{frame}
+  \frametitle{Results}
+    Original branchng fractions:
+  {\tiny\input{tables/papers_table.tex}}
+  
+  Predicitons for branching fractions of the considered decays
+  {\tiny\input{tables/sum_table_2body.tex}}
+
+  Ratios (this/paper)
+  {\tiny\input{tables/ratios_table.tex}}
+  
+
+\end{frame}
+
+
+\section{$B_c\to \chi_{cJ}+n\pi$}
+\begin{frame}
+  \frametitle{$W\to \R$}
+  $W\to \R$ amplitude can be calculated using
+  \begin{itemize}
+  \item ChPt
+  \item resonance approximation
+  \item Phenomenology
+  \item etc
+  \end{itemize}
+  Spectral functions are defined as
+  $$
+  \int\frac{d\Phi(q \to k_1\dots k_n)}{2pi} \epsilon_\mu \epsilon^*_\nu = (q_\mu q_\nu - q^2 g_{\mu\nu}) \rho_T(q^2) + q_\mu q_\nu \rho_L(q^2)
+  $$
+
+  Checked comaring with
+  \begin{itemize}
+  \item $e^+ e^- \to \R$
+  \item $\tau \to \nu_\tau \R$
+  \item etc
+  \end{itemize}
+\end{frame}
+
+\subsection{$2\pi$}
+\begin{frame}
+  \frametitle{$W \to  2\pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1104.0808
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_2pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+  \includegraphics[width=0.9\textwidth]{figs/rhoT_2pi_q2}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{cJ} + 2\pi$}
+  \centering{\includegraphics[width=0.6\textwidth]{2pi_q2}}
+
+  $B_c \to \chi_{cJ} + 2\pi$ decay branching fractions (in $10^{-2}$) 
+
+  \input{tables/2pi.tex}
+\end{frame}
+
+\subsection{$3\pi$}
+\begin{frame}
+  \frametitle{$W \to  3\pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1104.0808
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_3pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+  \includegraphics[width=0.9\textwidth]{figs/rhoT_3pi_q2}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{cJ} + 3\pi$}
+  \centering{\includegraphics[width=0.6\textwidth]{3pi_q2}}
+
+  $B_c \to \chi_{cJ} + 3\pi$ decay branching fractions (in $10^{-2}$) 
+
+  \input{tables/3pi.tex}
+\end{frame}
+
+
+\subsection{$5\pi$}
+\begin{frame}
+  \frametitle{$W \to  5\pi$}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      % diag grabbed from arXiv:1104.0808
+      \centering{\includegraphics[width=0.9\textwidth]{diag_W_5pi}}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+  \includegraphics[width=0.9\textwidth]{figs/rhoT_5pi_q2}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{$B_c \to \chi_{cJ} + 5\pi$}
+  \centering{\includegraphics[width=0.6\textwidth]{5pi_q2}}
+  
+$B_c \to \chi_{cJ} + 5\pi$ decay branching fractions (in $10^{-6}$) 
+
+\input{tables/5pi.tex}
+\end{frame}
+
+\section{Results and Conclusion}
+\begin{frame}
+  \frametitle{Conclusion}
+  \begin{itemize}
+  \item Considering $B_c \to \chi_{cJ}+\R$ decays
+  \item Factorization model, spectral function approach
+  \item Form-factor sets from
+    \begin{itemize}
+    \item Ebert
+    \item Wang
+    \end{itemize}
+  \item Resonable agreement with papers' results, with one exception
+    \begin{itemize}
+    \item [Ebert]: $B_c\to\chi_{c1}\pi$
+    \end{itemize}
+  \item New results for $R=2\pi, 3\pi, 5\pi$
+  \item New decays added to EvtGen model (BC\_VHAD)
+  \end{itemize}
+  \vspace{1.5cm}
+  \centering{Thank you for your attention}
+\end{frame}
+
+
+\end{document}
