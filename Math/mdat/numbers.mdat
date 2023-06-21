@@ -14,7 +14,7 @@ q2Max[out_] := ($MBc - getMcc[out])^2;
 Clear[Ngamma];
 Ngamma[out_, outL_, fffit_] := Module[{
    $Mcc = getMcc[out],
-   $q2 = Switch[outL, "P", mPi, "V", mV, "W", q2]
+   $q2 = Switch[outL, "P", mPi^2, "V", mV^2, "W", q2]
    },
   gamma[out, outL] //. {
       beta -> 

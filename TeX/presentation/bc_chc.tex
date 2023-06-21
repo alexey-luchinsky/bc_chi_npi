@@ -2,6 +2,11 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 
+% \usetheme{Rochester}
+% \usecolortheme{orchid}
+% % \usefonttheme{structuresmallcapsserif}
+% \usefonttheme{focus}
+
 \title{$P$-Wave Charmonia Production in Exclusive $B_c$-Meson Decays}
 \author{Alexey Luchinsky}
 \institute{IHEP, Russia\\ BGSU, Bowling Green, OH, USA}
@@ -75,6 +80,14 @@ $$
 
 \begin{frame}
   \frametitle{$B_c \to J/\psi W$ transition}
+  Lots of articles, e.g. [Ebert, Faustov, Galkin,     Phys.Rev.D 68 (2003) 094020]
+  \begin{align*}
+    \label{eq:1}
+    H_\mu =& \frac{2i V(q^2)}{M_1+M_2}e_{\mu\nu\rho\sigma}\epsilon^\nu p_1^\rho p_2^\sigma
+             + (M_1+M_2) A_1(q^2)\epsilon_\mu - \\
+     & A_2(q^2) \left[p_{1\mu} + p_{2\mu}-\frac{M_1^2-M_2^2}{q^2}q^\mu\right]\frac{\epsilon q}{M_1+M_2}
+  \end{align*}
+  \centering{\includegraphics[width=0.7\textwidth]{0306306_Fig6}}
 \end{frame}
 
 
@@ -135,11 +148,12 @@ $$
 $$\M\left(B_c \to \chi_{cJ} + \R\right) = H^\mu \epsilon^{(\R)}_\mu$$
 Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 \begin{itemize}
-\item Ebert
-\item Wang
-\item Hernandez
+\item D. Ebert, R. N. Faustov, V. O. Galkin, PRD 82 (2010) 034019 
+\item Zhi-hui Wang et al,  	J. Phys. G,  39 (2012) 015009
+\item E. Hernandez et al, PRD      74 (2006) 074008
 \item etc.
 \end{itemize}
+I will use these form factors, compare published branching fractions and consider some other decay modes
 \end{frame}
 
 \subsection{$\chi_{c0}$}
@@ -169,7 +183,11 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
       \input{tables/chi_c0_P_Wang.tex}
     \end{column}
   \end{columns}
+  \vspace{2cm}
+  Good agreement
 \end{frame}
+
+\newcommand{\VSpace}{}
 
 \begin{frame}[t]
   \frametitle{$B_c \to \chi_{c0} e \nu$}
@@ -177,15 +195,15 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
       \input{tables/chi_c0_enu_Ebert.tex}
-      \vspace{0.5cm}
+      \VSpace 
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
         \input{tables/chi_c0_enu_Wang.tex}
-        \vspace{0.5cm}
       }
+      \VSpace 
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_e2_Wang}}}
       \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c0_enu_q2_Wang}}
     \end{column}
@@ -221,7 +239,6 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
 \begin{frame}
   \frametitle{$\chi_{c1}$, Form Factors}
   \begin{align*}
-    \label{eq:1}
     H_\mu =& \frac{2i h_A(q^2)}{M_1+M_2}e_{\mu\nu\rho\sigma}\epsilon^\nu p_1^\rho p_2^\sigma
              + (M_1+M_2) h_{V_1}(q^2)\epsilon_\mu + \\
      & [h_{V_2}(q^2)p_{1\mu} + h_{V_3}(q^2)p_{2\mu}]\frac{\epsilon q}{M_1}
@@ -250,15 +267,15 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
       \input{tables/chi_c1_enu_Ebert.tex}
-            \vspace{0.5cm}
+      \VSpace 
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
       \input{tables/chi_c1_enu_Wang.tex}
-        \vspace{0.5cm}
       }
+      \VSpace 
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_e2_Wang}}}
       \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c1_enu_q2_Wang}}
     \end{column}
@@ -329,15 +346,15 @@ Form-factors of the $B_c\to \chi_{cJ}W$ transitions were considered in
     \begin{column}{0.5\textwidth}
       \centering{[Ebert]}
       \input{tables/chi_c2_enu_Ebert.tex}
-      \vspace{0.5cm}
+      \VSpace 
       \visible<2->{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_q2_Ebert}}
     \end{column}
     \begin{column}{0.5\textwidth}
       \only<3->{
         \centering{[Wang]}
       \input{tables/chi_c2_enu_Wang.tex}
-        \vspace{0.5cm}
       }
+      \VSpace 
       \only<3,4>{\visible<4>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_e2_Wang}}}
       \only<5>{      \includegraphics[width=0.9\textwidth, height = 0.55\textheight]{chi_c2_enu_q2_Wang}}
     \end{column}
@@ -414,7 +431,7 @@ Enddecay
   Predicitons for branching fractions of the considered decays
   {\tiny\input{tables/sum_table.tex}}
 
-  Ratios
+  Ratios (this/paper)
   {\tiny\input{tables/ratios_table.tex}}
   
 \end{frame}
